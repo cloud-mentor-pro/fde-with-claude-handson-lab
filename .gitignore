@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+# Bản sao CSDL người học tạo khi chạy thử công cụ ở các module
+module-*/**/*.db

@@ -6,5 +6,6 @@ liệu, người viết đã nghỉ.
 - `nhap_don.py`: nhập phiếu đơn hàng (CSV) vào CSDL của hệ thống đơn hàng cũ.
 - `cau_hinh.ini`: đường dẫn CSDL (mặc định là CSDL thật trong `du-lieu/he-thong-cu/`) và tài khoản người nhập.
 - `phieu_nhap_mau.csv`: một phiếu mẫu hai đơn, mã Windows-1258.
+- `xem_don.py`: script nhỏ anh Quân viết để xem nhanh một đơn trong CSDL theo số đơn của khách.
 
 Đừng chạy `nhap_don.py` khi chưa có `--db` trỏ vào một bản sao: không có `--db`, công cụ ghi thẳng vào CSDL thật.
