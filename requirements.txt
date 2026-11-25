@@ -1,0 +1,2 @@
+# Thư viện chung cho các script ở gốc repo. Mỗi module có requirements.txt riêng nếu cần thêm.
+rich==14.1.0

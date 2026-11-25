@@ -1,0 +1,4 @@
+# Chỉ để dựng lại dữ liệu giả (scripts/tao_du_lieu.py); người học không cần cài.
+openpyxl==3.1.5
+pillow==11.3.0
+reportlab==4.4.4
