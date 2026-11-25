@@ -32,6 +32,17 @@ class Hook(unittest.TestCase):
     def test_cho_chep_csdl_that_ra_ban_sao(self):
         self.assertEqual(chay_hook("Bash", command="cp ../../du-lieu/he-thong-cu/donhang.db thu.db"), 0)
 
+    def test_chan_python3_va_py(self):
+        self.assertEqual(chay_hook("Bash", command="python3 ./nhap_don.py phieu_nhap_mau.csv"), 2)
+        self.assertEqual(chay_hook("Bash", command="py nhap_don.py --json ket-qua"), 2)
+
+    def test_chan_lenh_powershell(self):
+        self.assertEqual(chay_hook("PowerShell", command="python nhap_don.py phieu_nhap_mau.csv"), 2)
+
+    def test_cho_doc_file_nhap_don(self):
+        self.assertEqual(chay_hook("Bash", command="cat nhap_don.py"), 0)
+        self.assertEqual(chay_hook("Bash", command="git --no-pager diff nhap_don.py"), 0)
+
     def test_chan_sua_file_csdl_that(self):
         self.assertEqual(chay_hook("Write", file_path="/x/du-lieu/he-thong-cu/donhang.db", content=""), 2)
 

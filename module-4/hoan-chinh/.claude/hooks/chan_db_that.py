@@ -8,7 +8,13 @@ import re
 import sys
 
 CSDL_THAT = re.compile(r"he-thong-cu[/\\]donhang\.db")
+# Lệnh chạy công cụ: python, python3, py (Windows) rồi tới nhap_don.py. Lệnh chỉ đọc file như cat, git diff thì cho qua.
+CHAY_CONG_CU = re.compile(r"\b(python[0-9.]*|py)(\.exe)?\s+(\S*[/\\])?nhap_don\.py\b")
 LENH_GHI_SQL = re.compile(r"\b(insert|update|delete|drop|alter|replace|create)\b", re.IGNORECASE)
+
+
+# Lý do in ra có dấu tiếng Việt; trên Windows stderr không mặc định UTF-8.
+sys.stderr.reconfigure(encoding="utf-8")
 
 
 def chan(ly_do: str) -> None:
@@ -20,9 +26,9 @@ loi_goi = json.load(sys.stdin)
 tool = loi_goi.get("tool_name", "")
 dau_vao = loi_goi.get("tool_input", {})
 
-if tool == "Bash":
+if tool in ("Bash", "PowerShell"):
     lenh = dau_vao.get("command", "")
-    if "nhap_don.py" in lenh:
+    if CHAY_CONG_CU.search(lenh):
         # Không có --db thì công cụ ghi vào CSDL thật ghi trong cau_hinh.ini.
         tim = re.search(r"--db\s+(\S+)", lenh)
         if tim is None:
