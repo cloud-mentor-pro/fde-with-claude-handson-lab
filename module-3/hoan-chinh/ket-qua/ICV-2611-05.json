@@ -1,0 +1,21 @@
+{
+  "so_don_khach": "ICV-2611-05",
+  "ma_khach": "ICV",
+  "nguon": "email/ICV-2611-05.pdf",
+  "ngay_dat": "2026-11-11",
+  "ngay_giao": "2026-12-02",
+  "dong": [
+    {
+      "ma_hang": "HM-WH-7712",
+      "so_luong": 120,
+      "don_vi": "bộ"
+    },
+    {
+      "ma_hang": "HM-CN-3120",
+      "so_luong": 1000,
+      "don_vi": "cái"
+    }
+  ],
+  "can_nguoi_xem": false,
+  "ly_do": ""
+}

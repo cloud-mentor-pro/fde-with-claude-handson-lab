@@ -1,0 +1,26 @@
+{
+  "so_don_khach": "LHP-2611-04",
+  "ma_khach": "LHP",
+  "nguon": "fax/fax_20261110_LHP-2611-04.pdf",
+  "ngay_dat": "2026-11-10",
+  "ngay_giao": "2026-12-01",
+  "dong": [
+    {
+      "ma_hang": "HM-CN-2062",
+      "so_luong": 1000,
+      "don_vi": "cái"
+    },
+    {
+      "ma_hang": "HM-CL-0516",
+      "so_luong": 500,
+      "don_vi": "cái"
+    },
+    {
+      "ma_hang": "HM-CN-2041",
+      "so_luong": 4000,
+      "don_vi": "cái"
+    }
+  ],
+  "can_nguoi_xem": false,
+  "ly_do": ""
+}

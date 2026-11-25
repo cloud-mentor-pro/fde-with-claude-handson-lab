@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import csv
 import io
+import json
 import datetime as dt
 import random
 import sqlite3
@@ -257,15 +258,41 @@ def pdf_email(d: dict, duong_dan: Path):
     c.save()
 
 
+# Đơn Module 3 đọc chưa chắc (số lượng viết tay bị vệt dọc của đầu fax đè lên): JSON đánh dấu để người so lại với bản fax.
+DON_CAN_NGUOI_XEM = {"TPW-2611-08": "Số lượng viết tay ở dòng 1 bị vệt dọc đè lên, đọc chưa chắc"}
+
+
+def json_don(d: dict, nguon: str) -> dict:
+    """Đơn đã đọc thành JSON, đúng dạng script đọc đơn của Module 3 xuất ra. Module 4 nhập các file này vào hệ thống cũ."""
+    return {
+        "so_don_khach": d["so"],
+        "ma_khach": d["khach"]["ma"],
+        "nguon": nguon,
+        "ngay_dat": d["dat"].isoformat(),
+        "ngay_giao": d["giao"].isoformat(),
+        "dong": [{"ma_hang": dong["ma_sp"], "so_luong": dong["so_luong"], "don_vi": dong["dvt"]} for dong in d["dong"]],
+        "can_nguoi_xem": d["so"] in DON_CAN_NGUOI_XEM,
+        "ly_do": DON_CAN_NGUOI_XEM.get(d["so"], ""),
+    }
+
+
 def don_hang(rng: random.Random):
     thu_muc = GOC / "don-hang-moi"
     (thu_muc / "fax").mkdir(parents=True, exist_ok=True)
     (thu_muc / "email").mkdir(parents=True, exist_ok=True)
+    # JSON mẫu của Module 3 (đọc đơn bằng Claude API), để làm Module 4 mà chưa cần API key.
+    ket_qua = GOC.parent / "module-3" / "hoan-chinh" / "ket-qua"
+    ket_qua.mkdir(parents=True, exist_ok=True)
     for d in don_moi(rng):
         if d["khach"]["fax"]:
-            fax(d, rng, thu_muc / "fax" / f"fax_{d['dat']:%Y%m%d}_{d['so']}.pdf")
+            nguon = f"fax/fax_{d['dat']:%Y%m%d}_{d['so']}.pdf"
+            fax(d, rng, thu_muc / nguon)
         else:
-            pdf_email(d, thu_muc / "email" / f"{d['so']}.pdf")
+            nguon = f"email/{d['so']}.pdf"
+            pdf_email(d, thu_muc / nguon)
+        with open(ket_qua / f"{d['so']}.json", "w", encoding="utf-8") as tep:
+            json.dump(json_don(d, nguon), tep, ensure_ascii=False, indent=2)
+            tep.write("\n")
 
 
 # ---------------------------------------------------------------------------------------------- kế hoạch sản xuất

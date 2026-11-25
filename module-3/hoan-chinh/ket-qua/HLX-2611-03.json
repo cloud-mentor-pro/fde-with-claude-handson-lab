@@ -1,0 +1,16 @@
+{
+  "so_don_khach": "HLX-2611-03",
+  "ma_khach": "HLX",
+  "nguon": "fax/fax_20261110_HLX-2611-03.pdf",
+  "ngay_dat": "2026-11-10",
+  "ngay_giao": "2026-11-20",
+  "dong": [
+    {
+      "ma_hang": "HM-CN-2041",
+      "so_luong": 1000,
+      "don_vi": "cái"
+    }
+  ],
+  "can_nguoi_xem": false,
+  "ly_do": ""
+}

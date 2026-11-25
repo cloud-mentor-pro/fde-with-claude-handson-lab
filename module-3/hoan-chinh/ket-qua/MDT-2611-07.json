@@ -1,0 +1,26 @@
+{
+  "so_don_khach": "MDT-2611-07",
+  "ma_khach": "MDT",
+  "nguon": "email/MDT-2611-07.pdf",
+  "ngay_dat": "2026-11-12",
+  "ngay_giao": "2026-11-22",
+  "dong": [
+    {
+      "ma_hang": "HM-CN-2062",
+      "so_luong": 2000,
+      "don_vi": "cái"
+    },
+    {
+      "ma_hang": "HM-GR-0808",
+      "so_luong": 2000,
+      "don_vi": "cái"
+    },
+    {
+      "ma_hang": "HM-CN-3120",
+      "so_luong": 1500,
+      "don_vi": "cái"
+    }
+  ],
+  "can_nguoi_xem": false,
+  "ly_do": ""
+}

@@ -1,0 +1,26 @@
+{
+  "so_don_khach": "HMK-2611-06",
+  "ma_khach": "HMK",
+  "nguon": "email/HMK-2611-06.pdf",
+  "ngay_dat": "2026-11-11",
+  "ngay_giao": "2026-11-25",
+  "dong": [
+    {
+      "ma_hang": "HM-WH-7712",
+      "so_luong": 60,
+      "don_vi": "bộ"
+    },
+    {
+      "ma_hang": "HM-CN-3120",
+      "so_luong": 1000,
+      "don_vi": "cái"
+    },
+    {
+      "ma_hang": "HM-CL-0516",
+      "so_luong": 500,
+      "don_vi": "cái"
+    }
+  ],
+  "can_nguoi_xem": false,
+  "ly_do": ""
+}
