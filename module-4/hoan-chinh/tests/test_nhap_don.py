@@ -68,6 +68,15 @@ class NhapDon(unittest.TestCase):
         self.assertIn("Da nhap 0/1 don.", kq.stdout)
         self.assertIn("khong co ma khach XYZ", kq.stdout)
 
+    def test_don_khong_con_dong_hop_le_thi_khong_ghi(self):
+        phieu = self.phieu(["T-3", "TPW", "16/11/2026", "30/11/2026", "HM-XX-0000", "500", ""])
+        kq = self.chay(phieu)
+        self.assertIn("Da nhap 0/1 don.", kq.stdout)
+        con = sqlite3.connect(self.db)
+        so = con.execute("SELECT COUNT(*) FROM tblDonHang WHERE GhiChu LIKE '%[phieu T-3]%'").fetchone()[0]
+        con.close()
+        self.assertEqual(so, 0)
+
     def test_khong_co_csdl(self):
         kq = subprocess.run([sys.executable, CONG_CU, "phieu.csv", "--db", os.path.join(self.tam, "khong-co.db")], capture_output=True, text=True)
         self.assertEqual(kq.returncode, 1)

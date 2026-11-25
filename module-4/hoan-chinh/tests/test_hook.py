@@ -43,6 +43,18 @@ class Hook(unittest.TestCase):
         self.assertEqual(chay_hook("Bash", command="cat nhap_don.py"), 0)
         self.assertEqual(chay_hook("Bash", command="git --no-pager diff nhap_don.py"), 0)
 
+    def test_chan_cach_chay_khac(self):
+        self.assertEqual(chay_hook("Bash", command="python -u nhap_don.py x.csv"), 2)
+        self.assertEqual(chay_hook("Bash", command='python "nhap_don.py" x.csv'), 2)
+        self.assertEqual(chay_hook("Bash", command="python -m nhap_don x.csv"), 2)
+        self.assertEqual(chay_hook("Bash", command="python -u nhap_don.py x.csv --db thu.db"), 0)
+
+    def test_chan_ghi_de_file_csdl_that(self):
+        self.assertEqual(chay_hook("Bash", command="cp thu.db ../../du-lieu/he-thong-cu/donhang.db"), 2)
+        self.assertEqual(chay_hook("Bash", command="rm ../../du-lieu/he-thong-cu/donhang.db"), 2)
+        self.assertEqual(chay_hook("Bash", command="echo x > ../../du-lieu/he-thong-cu/donhang.db"), 2)
+        self.assertEqual(chay_hook("Bash", command='sqlite3 ../../du-lieu/he-thong-cu//donhang.db "DELETE FROM tblCTDH"'), 2)
+
     def test_chan_sua_file_csdl_that(self):
         self.assertEqual(chay_hook("Write", file_path="/x/du-lieu/he-thong-cu/donhang.db", content=""), 2)
 

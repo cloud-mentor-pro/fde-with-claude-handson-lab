@@ -7,10 +7,19 @@ import json
 import re
 import sys
 
-CSDL_THAT = re.compile(r"he-thong-cu[/\\]donhang\.db")
-# Lệnh chạy công cụ: python, python3, py (Windows) rồi tới nhap_don.py. Lệnh chỉ đọc file như cat, git diff thì cho qua.
-CHAY_CONG_CU = re.compile(r"\b(python[0-9.]*|py)(\.exe)?\s+(\S*[/\\])?nhap_don\.py\b")
+CSDL_THAT = re.compile(r"he-thong-cu[/\\]+(\.[/\\]+)?donhang\.db")
+# Lệnh chạy công cụ: python, python3, py (Windows), có thể kèm cờ như -u, rồi tới nhap_don.py (có thể trong dấu nháy)
+# hay -m nhap_don. Lệnh chỉ đọc file như cat, git diff thì cho qua.
+CHAY_CONG_CU = re.compile(
+    r"\b(python[0-9.]*|py)(\.exe)?(\s+-[A-Za-z]\S*(\s+\S+)?)*?\s+(-m\s+nhap_don\b|[\"']?(\S*[/\\])?nhap_don\.py\b)"
+)
 LENH_GHI_SQL = re.compile(r"\b(insert|update|delete|drop|alter|replace|create)\b", re.IGNORECASE)
+# Lệnh ghi đè hay xoá chính file CSDL thật: rm, mv, chép đè lên nó, hay chuyển hướng (>) vào nó.
+GHI_FILE_THAT = re.compile(
+    r"(\b(rm|mv|del|Remove-Item|Move-Item)\b[^|;&]*he-thong-cu[/\\]+(\.[/\\]+)?donhang\.db"
+    r"|\b(cp|copy|Copy-Item)\b[^|;&]*\s\S*he-thong-cu[/\\]+(\.[/\\]+)?donhang\.db[\"']?\s*($|[|;&])"
+    r"|>\s*\S*he-thong-cu[/\\]+(\.[/\\]+)?donhang\.db)"
+)
 
 
 # Lý do in ra có dấu tiếng Việt; trên Windows stderr không mặc định UTF-8.
@@ -37,6 +46,8 @@ if tool in ("Bash", "PowerShell"):
             chan("--db đang trỏ vào CSDL thật")
     if CSDL_THAT.search(lenh) and LENH_GHI_SQL.search(lenh):
         chan("lệnh có câu SQL ghi vào CSDL thật")
+    if GHI_FILE_THAT.search(lenh):
+        chan("lệnh xoá, chuyển hay chép đè lên file CSDL thật")
 
 if tool in ("Edit", "Write", "MultiEdit"):
     if CSDL_THAT.search(dau_vao.get("file_path", "")):

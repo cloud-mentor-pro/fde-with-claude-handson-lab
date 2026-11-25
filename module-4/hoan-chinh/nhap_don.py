@@ -74,6 +74,11 @@ def doc_phieu(duong_dan):
     return [(k, don[k]) for k in thu_tu]
 
 
+def ngay_iso(s):
+    # ngay trong JSON dang yyyy-mm-dd -> dd/mm/yyyy nhu he thong cu
+    return datetime.strptime(s, "%Y-%m-%d").strftime("%d/%m/%Y") if s else ""
+
+
 def doc_json(thu_muc):
     # Don Module 3 doc ra: moi file mot don. Don can_nguoi_xem thi giu lai, khong nhap.
     ds, giu_lai = [], []
@@ -85,8 +90,8 @@ def doc_json(thu_muc):
             continue
         d = {
             "MaKH": j["ma_khach"],
-            "NgayDat": datetime.strptime(j["ngay_dat"], "%Y-%m-%d").strftime("%d/%m/%Y"),
-            "NgayGiao": datetime.strptime(j["ngay_giao"], "%Y-%m-%d").strftime("%d/%m/%Y") if j.get("ngay_giao") else "",
+            "NgayDat": ngay_iso(j["ngay_dat"]),
+            "NgayGiao": ngay_iso(j.get("ngay_giao", "")),
             "GhiChu": "",
             "dong": [(x["ma_hang"], str(x["so_luong"])) for x in j["dong"]],
         }
@@ -99,25 +104,28 @@ def nhap_mot_don(so_khach, d):
     if kh is None:
         loi.append("%s: khong co ma khach %s" % (so_khach, d["MaKH"]))
         return False
-    dat = ngay(d["NgayDat"])
-    sdh = so_don_moi(dat)
-    ghi_chu = (d["GhiChu"] + " ").strip() + " [phieu " + so_khach + "]"
-    con.execute("INSERT INTO tblDonHang VALUES (?,?,?,?,?,?,?)", (sdh, d["MaKH"], dat, ngay(d["NgayGiao"]), 0, NGUOI_NHAP, ghi_chu.strip()))
-    stt = 0
+    # Kiem tung dong truoc khi ghi: dong sai ma hang hay so luong thi bo, khong con dong nao thi khong ghi don.
+    cac_dong = []
     for ma_sp, sl in d["dong"]:
         sp = con.execute("SELECT DonGia FROM tblSanPham WHERE MaSP=?", (ma_sp,)).fetchone()
         if sp is None:
             loi.append("%s: khong co ma hang %s" % (so_khach, ma_sp))
             continue
         try:
-            sl = so_luong(sl)
+            cac_dong.append((ma_sp, so_luong(sl), sp[0]))
         except ValueError as e:
             loi.append("%s: %s" % (so_khach, e))
-            continue
-        stt = stt + 1
-        con.execute("INSERT INTO tblCTDH VALUES (?,?,?,?,?)", (sdh, stt, ma_sp, sl, sp[0]))
+    if not cac_dong:
+        loi.append("%s: khong con dong hang hop le, khong nhap don" % so_khach)
+        return False
+    dat = ngay(d["NgayDat"])
+    sdh = so_don_moi(dat)
+    ghi_chu = (d["GhiChu"] + " ").strip() + " [phieu " + so_khach + "]"
+    con.execute("INSERT INTO tblDonHang VALUES (?,?,?,?,?,?,?)", (sdh, d["MaKH"], dat, ngay(d["NgayGiao"]), 0, NGUOI_NHAP, ghi_chu.strip()))
+    for stt, (ma_sp, sl, gia) in enumerate(cac_dong, start=1):
+        con.execute("INSERT INTO tblCTDH VALUES (?,?,?,?,?)", (sdh, stt, ma_sp, sl, gia))
     con.commit()
-    print("  %s -> %s (%d dong)" % (so_khach, sdh, stt))
+    print("  %s -> %s (%d dong)" % (so_khach, sdh, len(cac_dong)))
     return True
 
 
