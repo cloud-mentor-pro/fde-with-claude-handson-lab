@@ -30,8 +30,8 @@ tiếng Nhật gửi công ty mẹ.
 Cần Python 3.10 trở lên và git.
 
 ```bash
-git clone https://github.com/cloud-mentor-pro/fde-voi-claude.git
-cd fde-voi-claude
+git clone https://github.com/cloud-mentor-pro/fde-with-claude-handson-lab.git
+cd fde-with-claude-handson-lab
 python3 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
