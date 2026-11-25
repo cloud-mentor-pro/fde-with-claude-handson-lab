@@ -1,3 +1,3 @@
 # Module 0, bản hoàn chỉnh
 
-Bản hoàn chỉnh của Module 0 sẽ có ở đây khi soạn bài của module.
+`phieu-khao-sat.md`: một cách ghi phiếu khảo sát cho Hoshimori Việt Nam, để so với phiếu của bạn.
