@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 # Bản sao CSDL người học tạo khi chạy thử công cụ ở các module
 module-*/**/*.db
+# File bo_ten.py ghi ra khi người học chạy Module 1 (bản mẫu nằm ở module-1/hoan-chinh/)
+module-1/bat-dau/so_loi_qc_t10_khong_ten.csv

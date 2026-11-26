@@ -7,11 +7,10 @@ Code và dữ liệu mẫu cho khoá học miễn phí **FDE với Claude** trê
 
 ## Khách hàng mẫu: Hoshimori Việt Nam
 
-Công ty TNHH Hoshimori Việt Nam làm linh kiện ô tô và xe máy: ép nhựa vỏ connector, kẹp dây, và lắp bó dây điện
-(wire harness). Nhà máy ở một khu công nghiệp thuộc Bình Dương cũ (nay là TP.HCM), công ty mẹ là Hoshimori Kogyo ở
-Nagoya. Nhà máy đang vướng ở mấy chỗ quen thuộc: đơn hàng tới bằng fax và PDF rồi được gõ tay vào một hệ thống viết từ
-năm 2011, kế hoạch sản xuất nằm trong Excel, sổ lỗi QC ghi mỗi người một kiểu, và mỗi tháng mất hai ngày soạn báo cáo
-tiếng Nhật gửi công ty mẹ.
+Công ty TNHH Hoshimori Việt Nam làm linh kiện ô tô và xe máy: ép nhựa vỏ connector, kẹp dây, và lắp bó dây điện (wire
+harness). Nhà máy ở Bình Dương cũ (nay thuộc TP.HCM), công ty mẹ là Hoshimori Kogyo ở Nagoya. Nhà máy đang vướng ở mấy
+chỗ quen thuộc: đơn hàng tới bằng fax và PDF rồi được gõ tay vào một hệ thống viết từ năm 2011, kế hoạch sản xuất nằm
+trong Excel, sổ lỗi QC ghi mỗi người một kiểu, và mỗi tháng mất hai ngày soạn báo cáo gửi công ty mẹ.
 
 ## Trong repo có gì
 
@@ -21,9 +20,10 @@ tiếng Nhật gửi công ty mẹ.
 | `du-lieu/don-hang-moi/` | Đơn hàng tuần 46 chưa nhập: bản fax và PDF gửi qua email, mỗi khách một mẫu |
 | `du-lieu/ke-hoach-san-xuat/` | File Excel kế hoạch sản xuất tháng 10 |
 | `du-lieu/qc/` | Sổ lỗi QC hằng ngày tháng 10 |
-| `du-lieu/cong-ty-me/` | Bốn tài liệu tiếng Nhật của công ty mẹ, bản dịch tiếng Việt ở `ban-dich/` |
+| `du-lieu/cong-ty-me/` | Bốn tài liệu của công ty mẹ, bằng tiếng Anh: hướng dẫn dùng AI tạo sinh, mẫu báo cáo tháng, mẫu tờ trình ringi, quy định an toàn thông tin (trích) |
 | `module-0/` … `module-9/` | Mỗi module một bản khởi đầu (`bat-dau/`) và một bản hoàn chỉnh (`hoan-chinh/`) |
 | `scripts/tao_du_lieu.py` | Script dựng lại dữ liệu giả (người học không cần chạy) |
+| `tests/` | Test cho dữ liệu giả và script của Module 1: `python -m unittest discover -s tests` |
 
 ## Bắt đầu
 

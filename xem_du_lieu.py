@@ -43,7 +43,7 @@ def main():
     so_dong_qc, ti_le, cach_viet = loi_qc()
     fax = dem(DU_LIEU / "don-hang-moi" / "fax", "*.pdf")
     email = dem(DU_LIEU / "don-hang-moi" / "email", "*.pdf")
-    tai_lieu_nhat = dem(DU_LIEU / "cong-ty-me", "*.md")
+    tai_lieu_cong_ty_me = dem(DU_LIEU / "cong-ty-me", "*.md")
 
     bang = Table(title="Dữ liệu của Hoshimori Việt Nam (giả lập)", title_justify="left")
     bang.add_column("Nguồn", style="bold")
@@ -53,7 +53,7 @@ def main():
     bang.add_row("Đơn hàng mới tuần 46", f"{fax} fax, {email} email", "fax mờ và nghiêng, mỗi khách một mẫu đơn")
     bang.add_row("Kế hoạch sản xuất T10", "1 file Excel", "ô gộp, ngày viết ba kiểu, cột bị ẩn")
     bang.add_row("Sổ lỗi QC T10", f"{so_dong_qc} dòng", f"lỗi {ti_le:.2f}%".replace(".", ",") + f', "ba via" viết {cach_viet} kiểu')
-    bang.add_row("Tài liệu công ty mẹ", f"{tai_lieu_nhat} tài liệu", "tiếng Nhật, có bản dịch trong ban-dich/")
+    bang.add_row("Tài liệu công ty mẹ", f"{tai_lieu_cong_ty_me} tài liệu", "tiếng Anh, quy định dùng AI và mẫu báo cáo")
     Console().print(bang)
 
 

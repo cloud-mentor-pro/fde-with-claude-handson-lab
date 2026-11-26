@@ -1,44 +1,44 @@
 ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 01/10/2026,1,M16,HM-CL-0516,500,6,ba via,,Hưng
-01/10/2026,1,M22,HM-CN-2062,800,15,đứt dây,"khuôn mòn, chờ thay",tu.pv
+01/10/2026,1,M22,HM-CN-2062,800,15,thiếu nhựa,"khuôn mòn, chờ thay",tu.pv
 01/10/2026,1,M21,HM-CL-0516,1200,14,sai màu,,Hưng
 01/10/2026,1,BD-2,HM-WH-7730,60,0,,,Tú
 01/10/2026,2,M07,HM-CL-0310,1000,15,thiếu nhựa,,Hưng
 01/10/2026,2,M02,HM-CL-0310,800,7,cong vênh,,Nga
-01/10/2026,2,M15,HM-CN-2041,2000,31,bấm cos lệch,đã báo bảo trì,Hưng
+01/10/2026,2,M15,HM-CN-2041,2000,31,cong vênh,đã báo bảo trì,Hưng
 01/10/2026,2,M14,HM-CL-0516,1200,16,ba via,,tu.pv
 01/10/2026,2,M22,HM-CN-3120,1000,12,trầy xước,"NVL ẩm, sấy lại 4h",Tú
 02/10/2026,1,M20,HM-CL-0516,2000,7,sai màu,"khuôn mòn, chờ thay",Nga
 02/10/2026,1,M01,HM-CN-2041,2000,12,sai màu,đã báo bảo trì,Hưng
-02/10/2026,1,BD-2,HM-WH-7730,60,1,bavia,KH TPW khiếu nại lô 10/10,tu.pv
+02/10/2026,1,BD-2,HM-WH-7730,60,1,bấm cos lệch,KH TPW khiếu nại lô 10/10,tu.pv
 02/10/2026,2,BD-3,HM-WH-7712,80,0,,"khuôn mòn, chờ thay",tu.pv
-02/10/2026,2,BD-1,HM-WH-7712,120,1,bavia,,Hưng
+02/10/2026,2,BD-1,HM-WH-7712,120,1,bấm cos lệch,,Hưng
 02/10/2026,2,BD-1,HM-WH-7712,60,0,,"NVL ẩm, sấy lại 4h",Nga
 02/10/2026,2,M09,HM-CL-0516,1200,14,bavia,KH TPW khiếu nại lô 10/10,Hưng
-02/10/2026,2,BD-2,HM-WH-7712,120,1,bavia,,Nga
+02/10/2026,2,BD-2,HM-WH-7712,120,1,bấm cos lệch,,Nga
 02/10/2026,2,M24,HM-CN-2062,1000,15,Ba via,,tu.pv
 03/10/2026,1,M05,HM-CN-2062,2000,21,Ba via,ca 2 thiếu người,Hưng
 03/10/2026,1,M15,HM-GR-0808,1000,9,trầy xước,"NVL ẩm, sấy lại 4h",Hưng
-03/10/2026,1,M03,HM-CN-2062,500,3,đứt dây,đã báo bảo trì,Hưng
+03/10/2026,1,M03,HM-CN-2062,500,3,thiếu nhựa,đã báo bảo trì,Hưng
 03/10/2026,1,BD-1,HM-WH-7730,60,0,,KH TPW khiếu nại lô 10/10,tu.pv
 03/10/2026,1,M01,HM-GR-0808,2000,19,sai màu,"khuôn mòn, chờ thay",Tú
 03/10/2026,1,M12,HM-CN-2041,1000,7,Ba via,ca 2 thiếu người,Tú
 03/10/2026,1,M16,HM-CN-2062,500,9,sai màu,,Nga
-03/10/2026,2,BD-1,HM-WH-7730,120,1,Ba via,đã báo bảo trì,tu.pv
+03/10/2026,2,BD-1,HM-WH-7730,120,1,đứt dây,đã báo bảo trì,tu.pv
 03/10/2026,2,M11,HM-CL-0310,800,10,ba via,"NVL ẩm, sấy lại 4h",Hưng
-03/10/2026,2,M17,HM-CN-2041,800,7,đứt dây,đã báo bảo trì,Hưng
+03/10/2026,2,M17,HM-CN-2041,800,7,thiếu nhựa,đã báo bảo trì,Hưng
 03/10/2026,2,M22,HM-CL-0516,1000,14,Ba via,đã báo bảo trì,Tú
 04/10/2026,1,BD-3,HM-WH-7730,80,0,,"khuôn mòn, chờ thay",Tú
 04/10/2026,1,M20,HM-CL-0310,1000,24,trầy xước,,Tú
 04/10/2026,1,BD-1,HM-WH-7712,120,1,đứt dây,"NVL ẩm, sấy lại 4h",Nga
-04/10/2026,1,BD-1,HM-WH-7730,120,2,sai màu,,Tú
+04/10/2026,1,BD-1,HM-WH-7730,120,2,sai màu dây,,Tú
 04/10/2026,1,M19,HM-CL-0516,500,6,thiếu nhựa,"khuôn mòn, chờ thay",Nga
-04/10/2026,2,M22,HM-CL-0516,800,5,bấm cos lệch,đã báo bảo trì,Nga
+04/10/2026,2,M22,HM-CL-0516,800,5,cong vênh,đã báo bảo trì,Nga
 04/10/2026,2,M15,HM-GR-0808,500,3,thiếu nhựa,"khuôn mòn, chờ thay",Hưng
 04/10/2026,2,BD-3,HM-WH-7730,80,0,,,Nga
 04/10/2026,2,M04,HM-CN-2041,1000,16,sai màu,"khuôn mòn, chờ thay",tu.pv
-04/10/2026,2,BD-3,HM-WH-7730,120,1,bavia,"khuôn mòn, chờ thay",tu.pv
-04/10/2026,2,M09,HM-CN-3120,1000,3,bấm cos lệch,,Hưng
+04/10/2026,2,BD-3,HM-WH-7730,120,1,bấm cos lệch,"khuôn mòn, chờ thay",tu.pv
+04/10/2026,2,M09,HM-CN-3120,1000,3,cong vênh,,Hưng
 05/10/2026,1,M10,HM-CN-2041,1200,21,trầy xước,đã báo bảo trì,Hưng
 05/10/2026,1,BD-1,HM-WH-7730,80,0,,KH TPW khiếu nại lô 10/10,Hưng
 05/10/2026,1,M20,HM-CL-0310,1200,8,Ba via,,Tú
@@ -46,54 +46,54 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 05/10/2026,1,M20,HM-CN-3120,2000,41,Ba via,,Nga
 05/10/2026,1,BD-1,HM-WH-7712,80,2,trầy xước,"khuôn mòn, chờ thay",tu.pv
 05/10/2026,2,M08,HM-CN-2062,500,5,ba via,,Hưng
-05/10/2026,2,M05,HM-CN-2041,2000,18,bấm cos lệch,,Hưng
+05/10/2026,2,M05,HM-CN-2041,2000,18,cong vênh,,Hưng
 05/10/2026,2,BD-1,HM-WH-7712,80,1,trầy xước,đã báo bảo trì,tu.pv
 05/10/2026,2,M02,HM-CL-0516,1200,14,sai màu,,tu.pv
 05/10/2026,2,M15,HM-CN-2041,2000,17,cong vênh,"NVL ẩm, sấy lại 4h",Hưng
 05/10/2026,2,M14,HM-CL-0516,500,2,sai màu,,tu.pv
 05/10/2026,2,M20,HM-CL-0310,1200,18,thiếu nhựa,,Hưng
-06/10/2026,1,M07,HM-CN-2041,1000,8,bấm cos lệch,,Hưng
+06/10/2026,1,M07,HM-CN-2041,1000,8,cong vênh,,Hưng
 06/10/2026,1,M22,HM-GR-0808,1000,16,bavia,"NVL ẩm, sấy lại 4h",Nga
 06/10/2026,1,M07,HM-GR-0808,1200,7,sai màu,"khuôn mòn, chờ thay",tu.pv
 06/10/2026,1,M13,HM-CN-2041,800,11,sai màu,,Tú
-06/10/2026,2,M14,HM-CN-2041,1200,12,bấm cos lệch,"khuôn mòn, chờ thay",Hưng
+06/10/2026,2,M14,HM-CN-2041,1200,12,cong vênh,"khuôn mòn, chờ thay",Hưng
 06/10/2026,2,BD-2,HM-WH-7730,80,0,,,Hưng
 06/10/2026,2,BD-1,HM-WH-7730,60,0,,ca 2 thiếu người,Nga
 07/10/2026,1,M11,HM-CN-2062,500,4,bavia,KH TPW khiếu nại lô 10/10,tu.pv
-07/10/2026,1,M07,HM-CN-3120,800,7,đứt dây,KH TPW khiếu nại lô 10/10,Tú
+07/10/2026,1,M07,HM-CN-3120,800,7,thiếu nhựa,KH TPW khiếu nại lô 10/10,Tú
 07/10/2026,1,M13,HM-CN-2041,2000,27,thiếu nhựa,,Hưng
 07/10/2026,1,M05,HM-GR-0808,500,4,cong vênh,,Tú
 07/10/2026,1,M09,HM-CN-2062,800,6,Ba via,,Tú
 07/10/2026,2,M24,HM-CN-2041,2000,36,sai màu,KH TPW khiếu nại lô 10/10,tu.pv
 07/10/2026,2,M16,HM-CN-3120,500,9,trầy xước,,tu.pv
-07/10/2026,2,M16,HM-CL-0310,2000,5,đứt dây,,Hưng
-07/10/2026,2,BD-2,HM-WH-7712,120,2,sai màu,"NVL ẩm, sấy lại 4h",Tú
-07/10/2026,2,M02,HM-CL-0310,500,7,bấm cos lệch,"NVL ẩm, sấy lại 4h",tu.pv
+07/10/2026,2,M16,HM-CL-0310,2000,5,thiếu nhựa,,Hưng
+07/10/2026,2,BD-2,HM-WH-7712,120,2,sai màu dây,"NVL ẩm, sấy lại 4h",Tú
+07/10/2026,2,M02,HM-CL-0310,500,7,cong vênh,"NVL ẩm, sấy lại 4h",tu.pv
 07/10/2026,2,M23,HM-CN-2062,800,5,trầy xước,"khuôn mòn, chờ thay",Tú
 08/10/2026,1,BD-1,HM-WH-7730,80,0,,,Tú
 08/10/2026,1,M20,HM-CN-2041,1200,19,ba via,ca 2 thiếu người,Hưng
 08/10/2026,1,BD-3,HM-WH-7730,120,0,,,tu.pv
 08/10/2026,1,BD-1,HM-WH-7730,60,0,,,Tú
-08/10/2026,1,M14,HM-GR-0808,1000,3,đứt dây,ca 2 thiếu người,Nga
+08/10/2026,1,M14,HM-GR-0808,1000,3,thiếu nhựa,ca 2 thiếu người,Nga
 08/10/2026,2,M12,HM-GR-0808,500,2,thiếu nhựa,,Tú
-08/10/2026,2,M09,HM-CL-0310,1000,5,bấm cos lệch,,Tú
+08/10/2026,2,M09,HM-CL-0310,1000,5,cong vênh,,Tú
 08/10/2026,2,M11,HM-CN-2041,1200,21,bavia,,tu.pv
 08/10/2026,2,M01,HM-CN-3120,500,8,bavia,đã báo bảo trì,Hưng
-08/10/2026,2,M03,HM-GR-0808,1200,8,bấm cos lệch,"NVL ẩm, sấy lại 4h",Tú
+08/10/2026,2,M03,HM-GR-0808,1200,8,cong vênh,"NVL ẩm, sấy lại 4h",Tú
 08/10/2026,2,M19,HM-CL-0516,500,9,ba via,ca 2 thiếu người,Hưng
 09/10/2026,1,M10,HM-CL-0310,2000,33,bavia,"NVL ẩm, sấy lại 4h",Nga
-09/10/2026,1,BD-3,HM-WH-7712,120,1,bavia,,Hưng
-09/10/2026,1,BD-3,HM-WH-7730,120,1,ba via,,tu.pv
-09/10/2026,1,BD-1,HM-WH-7712,80,1,sai màu,ca 2 thiếu người,Hưng
+09/10/2026,1,BD-3,HM-WH-7712,120,1,bấm cos lệch,,Hưng
+09/10/2026,1,BD-3,HM-WH-7730,120,1,bấm cos lệch,,tu.pv
+09/10/2026,1,BD-1,HM-WH-7712,80,1,sai màu dây,ca 2 thiếu người,Hưng
 09/10/2026,1,M05,HM-CN-2041,800,8,sai màu,ca 2 thiếu người,Tú
-09/10/2026,1,BD-3,HM-WH-7730,80,1,sai màu,,Hưng
+09/10/2026,1,BD-3,HM-WH-7730,80,1,sai màu dây,,Hưng
 09/10/2026,1,M01,HM-CL-0516,1200,26,cong vênh,ca 2 thiếu người,Hưng
 09/10/2026,2,M23,HM-CL-0310,800,9,thiếu nhựa,,tu.pv
 09/10/2026,2,BD-2,HM-WH-7712,60,0,,KH TPW khiếu nại lô 10/10,Hưng
-09/10/2026,2,M15,HM-CN-3120,2000,12,bấm cos lệch,đã báo bảo trì,tu.pv
-09/10/2026,2,M17,HM-CL-0310,1200,11,bấm cos lệch,"NVL ẩm, sấy lại 4h",Tú
+09/10/2026,2,M15,HM-CN-3120,2000,12,cong vênh,đã báo bảo trì,tu.pv
+09/10/2026,2,M17,HM-CL-0310,1200,11,cong vênh,"NVL ẩm, sấy lại 4h",Tú
 09/10/2026,2,BD-1,HM-WH-7730,120,1,bấm cos lệch,"khuôn mòn, chờ thay",tu.pv
-09/10/2026,2,M23,HM-CL-0310,1000,13,bấm cos lệch,ca 2 thiếu người,Hưng
+09/10/2026,2,M23,HM-CL-0310,1000,13,cong vênh,ca 2 thiếu người,Hưng
 10/10/2026,1,BD-1,HM-WH-7730,80,0,,"NVL ẩm, sấy lại 4h",Nga
 10/10/2026,1,M19,HM-GR-0808,1200,10,bavia,ca 2 thiếu người,tu.pv
 10/10/2026,1,M24,HM-CL-0310,500,3,cong vênh,,tu.pv
@@ -110,9 +110,9 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 11/10/2026,2,M17,HM-CN-2041,800,8,thiếu nhựa,ca 2 thiếu người,Tú
 12/10/2026,1,M15,HM-CN-2062,1200,1,trầy xước,KH TPW khiếu nại lô 10/10,Hưng
 12/10/2026,1,M14,HM-GR-0808,500,8,sai màu,ca 2 thiếu người,Hưng
-12/10/2026,1,M14,HM-CN-3120,2000,15,bấm cos lệch,đã báo bảo trì,Tú
+12/10/2026,1,M14,HM-CN-3120,2000,15,cong vênh,đã báo bảo trì,Tú
 12/10/2026,1,BD-1,HM-WH-7730,60,0,,ca 2 thiếu người,Hưng
-12/10/2026,2,M09,HM-GR-0808,1000,9,đứt dây,đã báo bảo trì,Tú
+12/10/2026,2,M09,HM-GR-0808,1000,9,thiếu nhựa,đã báo bảo trì,Tú
 12/10/2026,2,M10,HM-CL-0516,2000,27,ba via,,tu.pv
 12/10/2026,2,M10,HM-CN-2062,500,4,sai màu,,Hưng
 12/10/2026,2,BD-3,HM-WH-7730,80,1,bấm cos lệch,KH TPW khiếu nại lô 10/10,Nga
@@ -120,69 +120,69 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 13/10/2026,1,M24,HM-CN-2062,800,9,Ba via,"khuôn mòn, chờ thay",Nga
 13/10/2026,1,BD-3,HM-WH-7712,60,0,,"NVL ẩm, sấy lại 4h",Nga
 13/10/2026,1,BD-1,HM-WH-7712,80,0,,,tu.pv
-13/10/2026,1,M20,HM-CL-0310,1200,8,bấm cos lệch,"khuôn mòn, chờ thay",Tú
+13/10/2026,1,M20,HM-CL-0310,1200,8,cong vênh,"khuôn mòn, chờ thay",Tú
 13/10/2026,1,M06,HM-CN-3120,800,2,bavia,KH TPW khiếu nại lô 10/10,Nga
 13/10/2026,2,M14,HM-CN-2041,1000,14,trầy xước,,Nga
-13/10/2026,2,M19,HM-CN-2062,1200,22,đứt dây,ca 2 thiếu người,Tú
+13/10/2026,2,M19,HM-CN-2062,1200,22,thiếu nhựa,ca 2 thiếu người,Tú
 13/10/2026,2,M04,HM-CL-0516,1000,9,ba via,,Tú
 13/10/2026,2,M17,HM-CN-2041,1000,1,ba via,đã báo bảo trì,tu.pv
 13/10/2026,2,BD-1,HM-WH-7730,80,0,,"khuôn mòn, chờ thay",Hưng
-13/10/2026,2,M16,HM-CL-0516,800,8,bấm cos lệch,"NVL ẩm, sấy lại 4h",tu.pv
-13/10/2026,2,BD-1,HM-WH-7712,80,1,thiếu nhựa,,tu.pv
-14/10/2026,1,BD-1,HM-WH-7730,60,1,Ba via,"NVL ẩm, sấy lại 4h",Nga
+13/10/2026,2,M16,HM-CL-0516,800,8,cong vênh,"NVL ẩm, sấy lại 4h",tu.pv
+13/10/2026,2,BD-1,HM-WH-7712,80,1,đứt dây,,tu.pv
+14/10/2026,1,BD-1,HM-WH-7730,60,1,đứt dây,"NVL ẩm, sấy lại 4h",Nga
 14/10/2026,1,M11,HM-CN-2041,500,7,sai màu,KH TPW khiếu nại lô 10/10,tu.pv
-14/10/2026,1,M13,HM-CN-3120,2000,25,bấm cos lệch,,Tú
+14/10/2026,1,M13,HM-CN-3120,2000,25,cong vênh,,Tú
 14/10/2026,1,M15,HM-GR-0808,2000,34,cong vênh,,Hưng
 14/10/2026,1,M16,HM-CN-2062,1200,15,trầy xước,đã báo bảo trì,tu.pv
 14/10/2026,2,M21,HM-CN-3120,1000,11,trầy xước,,Hưng
-14/10/2026,2,BD-3,HM-WH-7730,120,2,sai màu,,tu.pv
+14/10/2026,2,BD-3,HM-WH-7730,120,2,sai màu dây,,tu.pv
 14/10/2026,2,M19,HM-CL-0516,2000,27,trầy xước,,Nga
-14/10/2026,2,M11,HM-CN-3120,1200,21,đứt dây,,Hưng
-14/10/2026,2,M11,HM-CN-2041,2000,8,đứt dây,"NVL ẩm, sấy lại 4h",Hưng
+14/10/2026,2,M11,HM-CN-3120,1200,21,thiếu nhựa,,Hưng
+14/10/2026,2,M11,HM-CN-2041,2000,8,thiếu nhựa,"NVL ẩm, sấy lại 4h",Hưng
 15/10/2026,1,M07,HM-CN-3120,2000,17,cong vênh,KH TPW khiếu nại lô 10/10,Tú
 15/10/2026,1,M18,HM-CL-0516,1000,11,trầy xước,,tu.pv
 15/10/2026,1,M23,HM-CL-0310,800,7,bavia,đã báo bảo trì,Nga
 15/10/2026,1,M14,HM-CL-0516,1000,20,trầy xước,KH TPW khiếu nại lô 10/10,tu.pv
-15/10/2026,1,M23,HM-GR-0808,1000,10,đứt dây,đã báo bảo trì,tu.pv
+15/10/2026,1,M23,HM-GR-0808,1000,10,thiếu nhựa,đã báo bảo trì,tu.pv
 15/10/2026,2,BD-2,HM-WH-7730,60,0,,,Tú
-15/10/2026,2,BD-3,HM-WH-7712,120,1,cong vênh,,Nga
+15/10/2026,2,BD-3,HM-WH-7712,120,1,sai màu dây,,Nga
 15/10/2026,2,M07,HM-CL-0310,2000,24,ba via,,Nga
 15/10/2026,2,M13,HM-CN-2041,1000,7,trầy xước,KH TPW khiếu nại lô 10/10,Nga
-15/10/2026,2,BD-3,HM-WH-7730,80,1,thiếu nhựa,"NVL ẩm, sấy lại 4h",Tú
+15/10/2026,2,BD-3,HM-WH-7730,80,1,đứt dây,"NVL ẩm, sấy lại 4h",Tú
 16/10/2026,1,M15,HM-CN-2041,2000,25,ba via,,Hưng
-16/10/2026,1,BD-2,HM-WH-7730,120,2,sai màu,,Nga
+16/10/2026,1,BD-2,HM-WH-7730,120,2,sai màu dây,,Nga
 16/10/2026,1,M18,HM-CL-0310,500,3,cong vênh,KH TPW khiếu nại lô 10/10,Hưng
 16/10/2026,1,M18,HM-CN-2062,1200,15,trầy xước,ca 2 thiếu người,Hưng
 16/10/2026,1,M02,HM-CL-0310,2000,57,thiếu nhựa,KH TPW khiếu nại lô 10/10,tu.pv
 16/10/2026,1,BD-3,HM-WH-7730,80,0,,,Hưng
 16/10/2026,1,M10,HM-CL-0310,2000,11,Ba via,,Tú
 16/10/2026,2,M08,HM-CN-3120,1200,6,cong vênh,KH TPW khiếu nại lô 10/10,Tú
-16/10/2026,2,M15,HM-CN-2041,1000,3,đứt dây,"NVL ẩm, sấy lại 4h",Tú
+16/10/2026,2,M15,HM-CN-2041,1000,3,thiếu nhựa,"NVL ẩm, sấy lại 4h",Tú
 16/10/2026,2,M18,HM-CL-0516,500,6,Ba via,KH TPW khiếu nại lô 10/10,Hưng
 17/10/2026,1,M23,HM-GR-0808,1000,10,trầy xước,,Tú
 17/10/2026,1,M21,HM-CN-2041,500,5,ba via,"khuôn mòn, chờ thay",tu.pv
-17/10/2026,1,M17,HM-CN-3120,800,18,đứt dây,"NVL ẩm, sấy lại 4h",Hưng
+17/10/2026,1,M17,HM-CN-3120,800,18,thiếu nhựa,"NVL ẩm, sấy lại 4h",Hưng
 17/10/2026,1,M03,HM-CN-2062,500,12,trầy xước,KH TPW khiếu nại lô 10/10,Nga
-17/10/2026,1,M08,HM-CN-3120,800,7,bấm cos lệch,,tu.pv
+17/10/2026,1,M08,HM-CN-3120,800,7,cong vênh,,tu.pv
 17/10/2026,1,M16,HM-GR-0808,1200,16,bavia,ca 2 thiếu người,Nga
 17/10/2026,2,M24,HM-CN-2062,500,10,cong vênh,KH TPW khiếu nại lô 10/10,Nga
 17/10/2026,2,M18,HM-GR-0808,1200,3,thiếu nhựa,"khuôn mòn, chờ thay",Nga
 17/10/2026,2,BD-1,HM-WH-7712,80,1,đứt dây,,tu.pv
 17/10/2026,2,M09,HM-CN-2062,2000,19,Ba via,"NVL ẩm, sấy lại 4h",tu.pv
 17/10/2026,2,BD-2,HM-WH-7730,80,0,,,tu.pv
-18/10/2026,1,BD-3,HM-WH-7730,120,2,bavia,KH TPW khiếu nại lô 10/10,Nga
-18/10/2026,1,M04,HM-CN-2041,800,17,bấm cos lệch,"NVL ẩm, sấy lại 4h",tu.pv
+18/10/2026,1,BD-3,HM-WH-7730,120,2,bấm cos lệch,KH TPW khiếu nại lô 10/10,Nga
+18/10/2026,1,M04,HM-CN-2041,800,17,cong vênh,"NVL ẩm, sấy lại 4h",tu.pv
 18/10/2026,1,M08,HM-GR-0808,500,3,cong vênh,,Hưng
 18/10/2026,1,M21,HM-CL-0310,800,14,bavia,"NVL ẩm, sấy lại 4h",Hưng
-18/10/2026,1,BD-2,HM-WH-7712,80,1,ba via,,tu.pv
-18/10/2026,1,M15,HM-GR-0808,2000,30,đứt dây,đã báo bảo trì,tu.pv
+18/10/2026,1,BD-2,HM-WH-7712,80,1,bấm cos lệch,,tu.pv
+18/10/2026,1,M15,HM-GR-0808,2000,30,thiếu nhựa,đã báo bảo trì,tu.pv
 18/10/2026,2,M04,HM-CL-0310,500,4,sai màu,"NVL ẩm, sấy lại 4h",Nga
 18/10/2026,2,M21,HM-CN-2062,800,13,cong vênh,đã báo bảo trì,Hưng
 18/10/2026,2,M24,HM-CL-0310,2000,21,thiếu nhựa,"khuôn mòn, chờ thay",Hưng
 19/10/2026,1,M02,HM-GR-0808,1000,5,thiếu nhựa,"NVL ẩm, sấy lại 4h",Hưng
 19/10/2026,1,BD-3,HM-WH-7712,120,1,đứt dây,,tu.pv
-19/10/2026,1,M15,HM-CN-2041,500,3,đứt dây,"khuôn mòn, chờ thay",Tú
-19/10/2026,1,BD-3,HM-WH-7712,80,1,Ba via,"khuôn mòn, chờ thay",Hưng
+19/10/2026,1,M15,HM-CN-2041,500,3,thiếu nhựa,"khuôn mòn, chờ thay",Tú
+19/10/2026,1,BD-3,HM-WH-7712,80,1,đứt dây,"khuôn mòn, chờ thay",Hưng
 19/10/2026,1,BD-1,HM-WH-7730,60,0,,đã báo bảo trì,tu.pv
 19/10/2026,1,M12,HM-CN-2062,800,0,,"khuôn mòn, chờ thay",Tú
 19/10/2026,2,M13,HM-CN-2041,500,0,,KH TPW khiếu nại lô 10/10,tu.pv
@@ -193,80 +193,80 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 19/10/2026,2,M14,HM-CN-2062,2000,31,sai màu,"NVL ẩm, sấy lại 4h",Nga
 20/10/2026,1,BD-3,HM-WH-7712,80,1,bấm cos lệch,,Nga
 20/10/2026,1,M06,HM-CN-2062,1200,9,ba via,,tu.pv
-20/10/2026,1,M11,HM-CN-3120,800,7,bấm cos lệch,,Tú
+20/10/2026,1,M11,HM-CN-3120,800,7,cong vênh,,Tú
 20/10/2026,1,M03,HM-CN-3120,800,8,trầy xước,đã báo bảo trì,Hưng
 20/10/2026,1,BD-2,HM-WH-7730,120,0,,KH TPW khiếu nại lô 10/10,Hưng
 20/10/2026,1,M20,HM-CN-3120,500,7,Ba via,"khuôn mòn, chờ thay",Tú
 20/10/2026,2,M01,HM-CL-0516,1200,7,cong vênh,"NVL ẩm, sấy lại 4h",tu.pv
 20/10/2026,2,BD-3,HM-WH-7712,80,0,,đã báo bảo trì,Tú
-20/10/2026,2,M23,HM-CN-2041,1000,11,đứt dây,KH TPW khiếu nại lô 10/10,Nga
+20/10/2026,2,M23,HM-CN-2041,1000,11,thiếu nhựa,KH TPW khiếu nại lô 10/10,Nga
 20/10/2026,2,M21,HM-CN-3120,500,6,cong vênh,KH TPW khiếu nại lô 10/10,Nga
 20/10/2026,2,M14,HM-CN-2062,500,7,sai màu,,Nga
 20/10/2026,2,M04,HM-CL-0516,500,7,ba via,đã báo bảo trì,Nga
 20/10/2026,2,BD-3,HM-WH-7730,120,0,,,Nga
 21/10/2026,1,M13,HM-CN-2041,800,8,thiếu nhựa,đã báo bảo trì,tu.pv
-21/10/2026,1,M15,HM-CN-2062,1000,22,đứt dây,ca 2 thiếu người,Tú
-21/10/2026,1,M24,HM-CN-3120,1000,11,bấm cos lệch,,Tú
+21/10/2026,1,M15,HM-CN-2062,1000,22,thiếu nhựa,ca 2 thiếu người,Tú
+21/10/2026,1,M24,HM-CN-3120,1000,11,cong vênh,,Tú
 21/10/2026,1,BD-3,HM-WH-7730,80,1,đứt dây,,tu.pv
 21/10/2026,2,M03,HM-CL-0516,2000,30,thiếu nhựa,đã báo bảo trì,Hưng
-21/10/2026,2,BD-2,HM-WH-7730,80,1,Ba via,ca 2 thiếu người,Nga
+21/10/2026,2,BD-2,HM-WH-7730,80,1,đứt dây,ca 2 thiếu người,Nga
 21/10/2026,2,M21,HM-CN-2062,1200,13,thiếu nhựa,,tu.pv
 22/10/2026,1,BD-2,HM-WH-7712,60,0,,,Hưng
 22/10/2026,1,M13,HM-CN-3120,500,12,cong vênh,"NVL ẩm, sấy lại 4h",tu.pv
 22/10/2026,1,M12,HM-CL-0516,1000,9,trầy xước,,Hưng
-22/10/2026,1,M16,HM-GR-0808,800,8,bấm cos lệch,KH TPW khiếu nại lô 10/10,Hưng
+22/10/2026,1,M16,HM-GR-0808,800,8,cong vênh,KH TPW khiếu nại lô 10/10,Hưng
 22/10/2026,1,M02,HM-CL-0310,1000,6,thiếu nhựa,,Hưng
 22/10/2026,1,M21,HM-CN-2062,2000,14,sai màu,,Hưng
 22/10/2026,1,M02,HM-CN-2062,1200,23,ba via,KH TPW khiếu nại lô 10/10,tu.pv
-22/10/2026,2,M15,HM-CN-2041,500,6,bấm cos lệch,ca 2 thiếu người,tu.pv
+22/10/2026,2,M15,HM-CN-2041,500,6,cong vênh,ca 2 thiếu người,tu.pv
 22/10/2026,2,M24,HM-CL-0516,1000,15,sai màu,ca 2 thiếu người,Nga
 22/10/2026,2,M05,HM-GR-0808,800,9,Ba via,đã báo bảo trì,tu.pv
 22/10/2026,2,BD-2,HM-WH-7730,80,0,,đã báo bảo trì,Hưng
 22/10/2026,2,M19,HM-CL-0516,800,13,trầy xước,,Nga
 22/10/2026,2,BD-1,HM-WH-7730,80,0,,,Hưng
-22/10/2026,2,BD-3,HM-WH-7730,80,1,cong vênh,,tu.pv
+22/10/2026,2,BD-3,HM-WH-7730,80,1,sai màu dây,,tu.pv
 23/10/2026,1,M03,HM-CN-2041,2000,39,bavia,,Nga
-23/10/2026,1,BD-1,HM-WH-7712,120,1,bavia,đã báo bảo trì,Tú
+23/10/2026,1,BD-1,HM-WH-7712,120,1,bấm cos lệch,đã báo bảo trì,Tú
 23/10/2026,1,BD-2,HM-WH-7712,60,0,,"NVL ẩm, sấy lại 4h",Hưng
 23/10/2026,1,M10,HM-CL-0310,500,10,cong vênh,,Nga
 23/10/2026,1,M23,HM-GR-0808,500,6,Ba via,đã báo bảo trì,Tú
-23/10/2026,1,M08,HM-GR-0808,1200,14,bấm cos lệch,"khuôn mòn, chờ thay",tu.pv
-23/10/2026,2,BD-3,HM-WH-7730,120,2,thiếu nhựa,,Tú
+23/10/2026,1,M08,HM-GR-0808,1200,14,cong vênh,"khuôn mòn, chờ thay",tu.pv
+23/10/2026,2,BD-3,HM-WH-7730,120,2,đứt dây,,Tú
 23/10/2026,2,M08,HM-CL-0516,500,1,trầy xước,KH TPW khiếu nại lô 10/10,Tú
 23/10/2026,2,BD-2,HM-WH-7712,120,0,,đã báo bảo trì,tu.pv
 23/10/2026,2,M18,HM-CN-2041,1000,1,ba via,,Tú
 23/10/2026,2,M01,HM-CN-2062,1000,9,bavia,KH TPW khiếu nại lô 10/10,tu.pv
 23/10/2026,2,BD-1,HM-WH-7712,60,0,,,Hưng
-24/10/2026,1,M12,HM-CN-2041,1000,16,bấm cos lệch,"khuôn mòn, chờ thay",Nga
-24/10/2026,1,M14,HM-CN-3120,800,12,bấm cos lệch,KH TPW khiếu nại lô 10/10,tu.pv
-24/10/2026,1,M14,HM-CL-0310,800,8,đứt dây,KH TPW khiếu nại lô 10/10,Tú
-24/10/2026,1,M16,HM-CN-3120,500,9,đứt dây,,tu.pv
+24/10/2026,1,M12,HM-CN-2041,1000,16,cong vênh,"khuôn mòn, chờ thay",Nga
+24/10/2026,1,M14,HM-CN-3120,800,12,cong vênh,KH TPW khiếu nại lô 10/10,tu.pv
+24/10/2026,1,M14,HM-CL-0310,800,8,thiếu nhựa,KH TPW khiếu nại lô 10/10,Tú
+24/10/2026,1,M16,HM-CN-3120,500,9,thiếu nhựa,,tu.pv
 24/10/2026,1,M05,HM-CN-2062,500,6,Ba via,,tu.pv
 24/10/2026,1,M09,HM-CN-2062,1000,21,Ba via,đã báo bảo trì,tu.pv
 24/10/2026,2,M22,HM-CN-2062,500,9,sai màu,,tu.pv
-24/10/2026,2,M13,HM-CN-2062,1000,13,đứt dây,ca 2 thiếu người,Hưng
-24/10/2026,2,BD-3,HM-WH-7712,120,2,ba via,"NVL ẩm, sấy lại 4h",tu.pv
+24/10/2026,2,M13,HM-CN-2062,1000,13,thiếu nhựa,ca 2 thiếu người,Hưng
+24/10/2026,2,BD-3,HM-WH-7712,120,2,bấm cos lệch,"NVL ẩm, sấy lại 4h",tu.pv
 24/10/2026,2,M14,HM-CN-2041,1200,5,trầy xước,,tu.pv
 25/10/2026,1,BD-2,HM-WH-7712,80,0,,,tu.pv
 25/10/2026,1,M13,HM-CN-3120,1000,5,ba via,"NVL ẩm, sấy lại 4h",Hưng
 25/10/2026,1,BD-1,HM-WH-7730,80,0,,"NVL ẩm, sấy lại 4h",Hưng
-25/10/2026,1,M15,HM-CL-0516,500,3,đứt dây,KH TPW khiếu nại lô 10/10,Tú
-25/10/2026,1,BD-1,HM-WH-7712,80,1,bavia,KH TPW khiếu nại lô 10/10,Hưng
-25/10/2026,1,M07,HM-CN-2062,800,20,bấm cos lệch,,Nga
+25/10/2026,1,M15,HM-CL-0516,500,3,thiếu nhựa,KH TPW khiếu nại lô 10/10,Tú
+25/10/2026,1,BD-1,HM-WH-7712,80,1,bấm cos lệch,KH TPW khiếu nại lô 10/10,Hưng
+25/10/2026,1,M07,HM-CN-2062,800,20,cong vênh,,Nga
 25/10/2026,1,M14,HM-CN-2062,2000,27,sai màu,,Nga
-25/10/2026,2,M21,HM-CL-0310,2000,4,đứt dây,KH TPW khiếu nại lô 10/10,Tú
+25/10/2026,2,M21,HM-CL-0310,2000,4,thiếu nhựa,KH TPW khiếu nại lô 10/10,Tú
 25/10/2026,2,M03,HM-CN-3120,2000,26,Ba via,"NVL ẩm, sấy lại 4h",Tú
 25/10/2026,2,M19,HM-CL-0516,2000,15,thiếu nhựa,đã báo bảo trì,Tú
 25/10/2026,2,M23,HM-GR-0808,1200,15,ba via,,tu.pv
 25/10/2026,2,M06,HM-CL-0310,500,3,cong vênh,ca 2 thiếu người,Nga
 26/10/2026,1,M09,HM-CL-0310,800,5,ba via,"khuôn mòn, chờ thay",Tú
 26/10/2026,1,BD-2,HM-WH-7730,80,1,bấm cos lệch,KH TPW khiếu nại lô 10/10,Nga
-26/10/2026,1,BD-3,HM-WH-7712,60,1,bavia,đã báo bảo trì,Nga
+26/10/2026,1,BD-3,HM-WH-7712,60,1,bấm cos lệch,đã báo bảo trì,Nga
 26/10/2026,2,M07,HM-CN-3120,2000,32,bavia,,tu.pv
 26/10/2026,2,M17,HM-CN-2062,800,0,,,Nga
 26/10/2026,2,M19,HM-CL-0516,1000,14,bavia,"khuôn mòn, chờ thay",Nga
 27/10/2026,1,M02,HM-CN-3120,2000,30,bavia,,Nga
-27/10/2026,1,BD-1,HM-WH-7712,120,2,cong vênh,"NVL ẩm, sấy lại 4h",Tú
+27/10/2026,1,BD-1,HM-WH-7712,120,2,sai màu dây,"NVL ẩm, sấy lại 4h",Tú
 27/10/2026,1,M20,HM-CN-2041,800,10,ba via,"khuôn mòn, chờ thay",Hưng
 27/10/2026,2,M03,HM-CN-2062,500,8,trầy xước,,tu.pv
 27/10/2026,2,M19,HM-CN-3120,500,4,sai màu,,Nga
@@ -274,7 +274,7 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 27/10/2026,2,M24,HM-CL-0516,2000,22,bavia,ca 2 thiếu người,tu.pv
 28/10/2026,1,M22,HM-CN-3120,800,16,thiếu nhựa,"NVL ẩm, sấy lại 4h",Hưng
 28/10/2026,1,M23,HM-CL-0516,500,5,Ba via,,Tú
-28/10/2026,1,M12,HM-CN-3120,500,3,đứt dây,đã báo bảo trì,Nga
+28/10/2026,1,M12,HM-CN-3120,500,3,thiếu nhựa,đã báo bảo trì,Nga
 28/10/2026,1,M12,HM-CN-2062,1200,21,Ba via,"NVL ẩm, sấy lại 4h",Nga
 28/10/2026,1,BD-2,HM-WH-7730,80,1,trầy xước,,Nga
 28/10/2026,2,BD-1,HM-WH-7730,60,0,,ca 2 thiếu người,Tú
@@ -289,25 +289,25 @@ ngay,ca,may_chuyen,ma_hang,sl_kiem,sl_loi,loai_loi,ghi_chu,nguoi_ghi
 29/10/2026,1,BD-3,HM-WH-7712,60,0,,,Tú
 29/10/2026,2,M22,HM-CL-0516,500,3,ba via,"NVL ẩm, sấy lại 4h",tu.pv
 29/10/2026,2,M20,HM-CN-2041,1200,21,ba via,,Tú
-29/10/2026,2,M02,HM-CL-0516,800,12,đứt dây,đã báo bảo trì,Hưng
+29/10/2026,2,M02,HM-CL-0516,800,12,thiếu nhựa,đã báo bảo trì,Hưng
 29/10/2026,2,M02,HM-CL-0516,500,4,Ba via,,tu.pv
-29/10/2026,2,BD-3,HM-WH-7712,120,1,Ba via,đã báo bảo trì,Tú
-29/10/2026,2,BD-2,HM-WH-7712,80,1,ba via,,Tú
+29/10/2026,2,BD-3,HM-WH-7712,120,1,đứt dây,đã báo bảo trì,Tú
+29/10/2026,2,BD-2,HM-WH-7712,80,1,bấm cos lệch,,Tú
 30/10/2026,1,M21,HM-CL-0310,1200,18,trầy xước,ca 2 thiếu người,Nga
 30/10/2026,1,M13,HM-GR-0808,1000,20,trầy xước,ca 2 thiếu người,tu.pv
-30/10/2026,1,M11,HM-CL-0310,800,7,đứt dây,,tu.pv
+30/10/2026,1,M11,HM-CL-0310,800,7,thiếu nhựa,,tu.pv
 30/10/2026,1,M03,HM-CN-3120,500,2,cong vênh,đã báo bảo trì,Nga
 30/10/2026,1,M04,HM-CN-2062,1000,8,Ba via,,tu.pv
 30/10/2026,1,M19,HM-CN-2041,1200,22,cong vênh,,Tú
 30/10/2026,2,BD-2,HM-WH-7712,60,0,,đã báo bảo trì,Hưng
 30/10/2026,2,M01,HM-CN-2041,800,11,sai màu,,Nga
 30/10/2026,2,M08,HM-CN-3120,2000,19,cong vênh,"khuôn mòn, chờ thay",Hưng
-30/10/2026,2,M09,HM-CN-2062,500,6,đứt dây,ca 2 thiếu người,Tú
+30/10/2026,2,M09,HM-CN-2062,500,6,thiếu nhựa,ca 2 thiếu người,Tú
 30/10/2026,2,BD-2,HM-WH-7712,80,0,,,Nga
 30/10/2026,2,M09,HM-CN-2062,1000,11,thiếu nhựa,"khuôn mòn, chờ thay",Hưng
 31/10/2026,1,BD-1,HM-WH-7712,60,0,,đã báo bảo trì,Hưng
 31/10/2026,1,M02,HM-GR-0808,500,9,Ba via,,Tú
-31/10/2026,1,M24,HM-CN-3120,800,9,đứt dây,,Tú
+31/10/2026,1,M24,HM-CN-3120,800,9,thiếu nhựa,,Tú
 31/10/2026,1,BD-1,HM-WH-7730,120,2,bấm cos lệch,,Tú
 31/10/2026,1,BD-3,HM-WH-7730,60,0,,"NVL ẩm, sấy lại 4h",Tú
 31/10/2026,2,M13,HM-CN-3120,1000,19,sai màu,KH TPW khiếu nại lô 10/10,Nga

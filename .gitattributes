@@ -1,0 +1,8 @@
+# Dữ liệu giả do scripts/tao_du_lieu.py dựng ra: git giữ đúng từng byte (không đổi xuống dòng LF/CRLF khi checkout),
+# để file trên máy nào cũng giống hệt file script dựng lại, và tests/test_du_lieu.py so được.
+du-lieu/he-thong-cu/** -text
+du-lieu/don-hang-moi/** -text
+du-lieu/ke-hoach-san-xuat/** -text
+du-lieu/qc/** -text
+module-1/hoan-chinh/*.csv -text
+module-3/hoan-chinh/ket-qua/** -text

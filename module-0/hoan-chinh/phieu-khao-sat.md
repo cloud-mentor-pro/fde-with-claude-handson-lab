@@ -27,10 +27,10 @@ người, nguồn dữ liệu hay việc phải xin duyệt nào không.
 |---|---|---|---|---|
 | Hệ thống đơn hàng cũ (2011) | `du-lieu/he-thong-cu/donhang.db` | 1625 đơn (01–10/2026) | 40 đơn thiếu ngày giao, 161 dòng số lượng là chữ, khách `TPW` nhập trùng thành `TPW2` | Có: tài khoản người nhập (`thao.nt`, `diep.ln`) |
 | File CSV hệ thống cũ xuất ra | `du-lieu/he-thong-cu/xuat_don_hang_2026-10.csv` | Đơn tháng 10 | Dấu chấm phẩy, mã Windows-1258, mở bằng UTF-8 ra chữ lỗi | Không thấy |
-| Đơn hàng mới tuần 46 | `du-lieu/don-hang-moi/` | 6 fax, 4 email PDF | Fax mờ, nghiêng; mỗi khách một mẫu đơn; đơn của công ty mẹ bằng tiếng Nhật | Có: tên người đặt hàng trên đơn |
+| Đơn hàng mới tuần 46 | `du-lieu/don-hang-moi/` | 6 fax, 4 email PDF | Fax mờ, nghiêng; mỗi khách một mẫu đơn; đơn của công ty mẹ bằng tiếng Anh | Có: tên người đặt hàng trên đơn |
 | Kế hoạch sản xuất tháng 10 | `du-lieu/ke-hoach-san-xuat/` | 1 file Excel | Ô gộp, ngày viết ba kiểu, cột bị ẩn | Chưa xem kỹ |
 | Sổ lỗi QC tháng 10 | `du-lieu/qc/` | 316 dòng | Lỗi "ba via" viết ba kiểu; tỉ lệ lỗi 1,14% so với mục tiêu 1,0% | Có: tên người ghi sổ |
-| Tài liệu công ty mẹ | `du-lieu/cong-ty-me/` | 4 tài liệu tiếng Nhật, có bản dịch | Không bẩn, nhưng quyết định được dùng AI tới đâu | Không |
+| Tài liệu công ty mẹ | `du-lieu/cong-ty-me/` | 4 tài liệu tiếng Anh | Không bẩn, nhưng quyết định được dùng AI tới đâu | Không |
 
 ## 3. Chỗ vướng
 
@@ -38,7 +38,7 @@ người, nguồn dữ liệu hay việc phải xin duyệt nào không.
 |---|---|---|---|
 | Gõ đơn fax và PDF vào hệ thống cũ | Em Thảo, chị Diệp | Chưa đo, hỏi chị Diệp số đơn mỗi ngày và thời gian mỗi đơn | Sai số lượng thì giao nhầm hàng |
 | Hỏi "đơn nào sắp trễ?" | Anh Quân chạy truy vấn | Chưa đo | Biết trễ quá muộn |
-| Soạn báo cáo tháng tiếng Nhật | Chị Yến | Khoảng hai ngày mỗi tháng | Báo cáo sai số liệu gửi công ty mẹ |
+| Soạn báo cáo tháng gửi công ty mẹ | Chị Yến | Khoảng hai ngày mỗi tháng | Báo cáo sai số liệu gửi công ty mẹ |
 | Tổng hợp sổ lỗi QC | Chưa ai làm | Không làm | Không thấy lỗi lặp lại ở máy nào |
 
 ## 4. Câu cần hỏi thêm

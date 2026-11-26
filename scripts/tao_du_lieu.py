@@ -1,15 +1,18 @@
 """Dựng lại toàn bộ dữ liệu giả của Khách hàng mẫu trong du-lieu/ (trừ tài liệu của công ty mẹ, viết tay).
 
-Khách hàng mẫu: Công ty TNHH Hoshimori Việt Nam (HMV), nhà máy linh kiện ô tô vốn Nhật ở KCN VSIP II (Bình Dương
-cũ, nay thuộc TP.HCM), công ty mẹ là Hoshimori Kogyo ở Nagoya. Mọi tên người, công ty, mã hàng đều là giả.
+Khách hàng mẫu: Công ty TNHH Hoshimori Việt Nam (HMV), nhà máy linh kiện ô tô vốn Nhật ở Bình Dương cũ (nay thuộc
+TP.HCM), công ty mẹ là Hoshimori Kogyo ở Nagoya. Mọi tên người, công ty, mã hàng đều là giả. Dữ liệu viết bằng tiếng
+Việt và tiếng Anh, không có chữ Nhật, để người học không biết tiếng Nhật vẫn đọc được hết.
 
 Dữ liệu cố tình bẩn như ở nhà máy thật: đơn hàng fax mờ và nghiêng, mỗi khách một mẫu PDF, file Excel kế hoạch có ô
 gộp và ngày viết ba kiểu, hệ thống cũ lưu ngày dạng chữ và xuất CSV mã Windows-1258.
 
-Chạy (cần Python 3.10+, requirements-du-lieu.txt và font DejaVu, Noto CJK ở đường dẫn của Debian; máy dựng ảnh
-aep-khoa-hoc-anh của Anthropic Exam Pro có sẵn cả hai):
+Chạy (cần Python 3.10+, requirements-du-lieu.txt và font DejaVu ở đường dẫn của Debian; máy dựng ảnh
+aep-khoa-hoc-anh của Anthropic Exam Pro có sẵn):
     python scripts/tao_du_lieu.py
 Cùng seed thì ra cùng dữ liệu, nên chạy lại không làm git thấy file đổi; riêng file Excel ghi giờ lưu, git vẫn báo đổi.
+tests/test_du_lieu.py dựng lại vào thư mục tạm và so với bản trong repo, nên sửa dữ liệu thì sửa script rồi dựng lại,
+đừng sửa tay file dữ liệu.
 """
 from __future__ import annotations
 
@@ -27,11 +30,10 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
-GOC = Path(__file__).resolve().parent.parent / "du-lieu"
+REPO = Path(__file__).resolve().parent.parent
 SEED = 2026
 FONT_VN = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_VN_DAM = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
@@ -42,7 +44,7 @@ KHACH = [
     {"ma": "LHP", "ten": "Công ty TNHH Linh Kiện Nhựa Long Hậu", "fax": True, "mau": "thu"},
     {"ma": "ICV", "ten": "Ichinose Electric Vietnam Co., Ltd.", "fax": False, "mau": "anh"},
     {"ma": "HLX", "ten": "Công ty CP Phụ Tùng Xe Máy Hồng Lạc", "fax": True, "mau": "bang"},
-    {"ma": "HMK", "ten": "Hoshimori Kogyo Co., Ltd. (Nagoya)", "fax": False, "mau": "nhat"},
+    {"ma": "HMK", "ten": "Hoshimori Kogyo Co., Ltd. (Nagoya)", "fax": False, "mau": "cong-ty-me"},
     {"ma": "MDT", "ten": "Công ty TNHH Cơ Điện Minh Đạt", "fax": False, "mau": "bang"},
 ]
 # Hàng HMV làm: vỏ connector và kẹp dây ép nhựa, bó dây (wire harness) phụ.
@@ -56,11 +58,12 @@ HANG = [
     ("HM-WH-7712", "Bó dây đèn hậu xe tay ga", "bộ", 48500),
     ("HM-WH-7730", "Bó dây công tắc tay lái", "bộ", 61200),
 ]
-TEN_JP = {
-    "HM-CN-2041": "4極コネクタハウジング（黒）",
-    "HM-CN-3120": "12極防水コネクタハウジング",
-    "HM-CL-0516": "φ16 ボルト止めクランプ",
-    "HM-WH-7712": "テールランプ用ワイヤーハーネス",
+# Công ty mẹ chỉ đặt bốn mã này, và đơn của công ty mẹ ghi tên hàng tiếng Anh theo danh mục ở Nagoya.
+TEN_CONG_TY_ME = {
+    "HM-CN-2041": "4-pole connector housing, black",
+    "HM-CN-3120": "12-pole waterproof connector housing",
+    "HM-CL-0516": "Clamp D16, bolt mount",
+    "HM-WH-7712": "Wire harness, tail lamp",
 }
 
 
@@ -88,10 +91,10 @@ def ngay_ngau_nhien(rng: random.Random, thang: int) -> dt.date:
 
 
 # ---------------------------------------------------------------------------------------------- hệ thống cũ
-def he_thong_cu(rng: random.Random) -> list[dict]:
+def he_thong_cu(rng: random.Random, du_lieu: Path) -> list[dict]:
     """SQLite giả lập hệ thống quản lý đơn hàng viết năm 2011 (bản gốc là Access): ngày lưu dạng chữ dd/mm/yyyy,
     trạng thái là số, vài dòng nhập tay sai kiểu. Trả về đơn hàng tháng 10 để dùng cho file xuất và kế hoạch."""
-    thu_muc = GOC / "he-thong-cu"
+    thu_muc = du_lieu / "he-thong-cu"
     thu_muc.mkdir(parents=True, exist_ok=True)
     db = thu_muc / "donhang.db"
     db.unlink(missing_ok=True)
@@ -108,7 +111,8 @@ def he_thong_cu(rng: random.Random) -> list[dict]:
     for k in KHACH:
         con.execute(
             "INSERT INTO tblKhachHang VALUES (?,?,?,?,?)",
-            (k["ma"], k["ten"], "KCN, Bình Dương" if k["ma"] != "HMK" else "名古屋市港区", "0274 3" + str(rng.randint(100000, 999999)) if k["fax"] else "", ""),
+            (k["ma"], k["ten"], "Bình Dương" if k["ma"] != "HMK" else "Minato-ku, Nagoya, Japan",
+             "0274 3" + str(rng.randint(100000, 999999)) if k["fax"] else "", ""),
         )
     # Khách trùng do nhập tay: cùng công ty, mã khác, tên thừa khoảng trắng.
     con.execute("INSERT INTO tblKhachHang VALUES ('TPW2','Cty TNHH Day Dien O To  Tan Phuoc ','Bình Dương','','nhập trùng?')")
@@ -166,7 +170,8 @@ def don_moi(rng: random.Random) -> list[dict]:
     for i, khach in enumerate([KHACH[0], KHACH[1], KHACH[3], KHACH[1], KHACH[2], KHACH[4], KHACH[5], KHACH[0], KHACH[2], KHACH[3]], start=1):
         dat = dt.date(2026, 11, 9 + (i - 1) // 2)
         dong = []
-        for ma_sp, ten, dvt, gia in rng.sample(HANG if khach["ma"] != "HMK" else [h for h in HANG if h[0] in TEN_JP], rng.randint(1, 3)):
+        hang = HANG if khach["ma"] != "HMK" else [h for h in HANG if h[0] in TEN_CONG_TY_ME]
+        for ma_sp, ten, dvt, gia in rng.sample(hang, rng.randint(1, 3)):
             sl = rng.choice([500, 1000, 1500, 2000, 4000]) if dvt == "cái" else rng.choice([60, 120, 200])
             dong.append({"ma_sp": ma_sp, "ten": ten, "dvt": dvt, "so_luong": sl})
         don.append({"so": f"{khach['ma']}-2611-{i:02d}", "khach": khach, "dat": dat, "giao": dat + dt.timedelta(days=rng.choice([10, 14, 21])), "dong": dong})
@@ -221,39 +226,69 @@ def fax(d: dict, rng: random.Random, duong_dan: Path):
     img.save(duong_dan, "PDF", resolution=150, creationDate=ngay_tao.timetuple(), modDate=ngay_tao.timetuple())
 
 
+# Mẫu đơn email theo `mau` của khách: tiêu đề, dòng đầu đơn, nhãn cột, đơn vị, ghi chú cuối, chỗ bắt đầu bảng.
+MAU_EMAIL = {
+    "cong-ty-me": {
+        "tieu_de": "ORDER SHEET",
+        "dau": lambda d: [
+            f"Order No.: {d['so']}", f"Order date: {d['dat']:%Y/%m/%d}", "To: Hoshimori Vietnam Co., Ltd.",
+            "From: Hoshimori Kogyo Co., Ltd., International Sales Dept. (Nagoya)", f"Due date: {d['giao']:%Y/%m/%d}",
+            "Payment terms: closing at month end, payment at the end of the following month",
+        ],
+        "cot": ["Item code", "Item name", "Quantity", "Unit"],
+        "don_vi": {"cái": "pcs", "bộ": "set"},
+        "ghi_chu": "Notes: Enclose the inspection report in each carton.",
+        "bang_y": 240,
+    },
+    "anh": {
+        "tieu_de": "PURCHASE ORDER",
+        "dau": lambda d: [
+            f"PO No.: {d['so']}", f"Date: {d['dat']:%b %d, %Y}", "To: Hoshimori Vietnam Co., Ltd.",
+            f"Delivery: {d['giao']:%Y-%m-%d} (DDP our warehouse)",
+        ],
+        "cot": ["Part No.", "Description", "Qty", "Unit"],
+        "don_vi": {"cái": "pcs", "bộ": "set"},
+        "ghi_chu": "Remarks: Please attach CoC with each lot.",
+        "bang_y": 210,
+    },
+    "bang": {
+        "tieu_de": "ĐƠN ĐẶT HÀNG",
+        "dau": lambda d: [
+            f"Số đơn: {d['so']}", f"Ngày đặt: {d['dat']:%d-%m-%Y}", "Bên bán: Công ty TNHH Hoshimori Việt Nam",
+            f"Thời hạn giao: {d['giao']:%d-%m-%Y}",
+        ],
+        "cot": ["Mã hàng", "Tên hàng", "Số lượng", "ĐVT"],
+        "don_vi": {},
+        "ghi_chu": "Ghi chú: giao kèm phiếu kiểm tra chất lượng.",
+        "bang_y": 210,
+    },
+}
+
+
 def pdf_email(d: dict, duong_dan: Path):
-    """Đơn gửi qua email: PDF có chữ thật, mỗi khách một mẫu (bảng, tiếng Anh, tiếng Nhật)."""
+    """Đơn gửi qua email: PDF có chữ thật, mỗi khách một mẫu (MAU_EMAIL). ICV gửi PO tiếng Anh; công ty mẹ gửi order
+    sheet tiếng Anh theo mẫu của Nagoya (ngày yyyy/mm/dd, điều khoản thanh toán); khách khác gửi đơn tiếng Việt."""
+    mau = MAU_EMAIL[d["khach"]["mau"]]
     c = canvas.Canvas(str(duong_dan), pagesize=A4, invariant=1)
     w, h = A4
-    nhat = d["khach"]["mau"] == "nhat"
-    anh = d["khach"]["mau"] == "anh"
-    c.setFont("HeiseiKakuGo-W5" if nhat else "VN-Dam", 16)
-    tieu_de = "注 文 書" if nhat else ("PURCHASE ORDER" if anh else "ĐƠN ĐẶT HÀNG")
-    c.drawString(50, h - 70, tieu_de)
-    c.setFont("HeiseiKakuGo-W5" if nhat else "VN", 10)
-    dong_dau = (
-        [f"発注番号: {d['so']}", f"発注日: {d['dat']:%Y年%m月%d日}", "宛先: Hoshimori Vietnam Co., Ltd. 御中", f"納期: {d['giao']:%Y/%m/%d}", "支払条件: 月末締め翌月末払い"]
-        if nhat
-        else [f"PO No.: {d['so']}", f"Date: {d['dat']:%b %d, %Y}", "To: Hoshimori Vietnam Co., Ltd.", f"Delivery: {d['giao']:%Y-%m-%d} (DDP our warehouse)"]
-        if anh
-        else [f"Số đơn: {d['so']}", f"Ngày đặt: {d['dat']:%d-%m-%Y}", "Bên bán: Công ty TNHH Hoshimori Việt Nam", f"Thời hạn giao: {d['giao']:%d-%m-%Y}"]
-    )
-    for i, text in enumerate(dong_dau):
+    c.setFont("VN-Dam", 16)
+    c.drawString(50, h - 70, mau["tieu_de"])
+    c.setFont("VN", 10)
+    for i, text in enumerate(mau["dau"](d)):
         c.drawString(50, h - 110 - 16 * i, text)
-    y = h - 210
-    nhan = ["品番", "品名", "数量", "単位"] if nhat else (["Part No.", "Description", "Qty", "Unit"] if anh else ["Mã hàng", "Tên hàng", "Số lượng", "ĐVT"])
-    for x, n in zip([50, 160, 420, 500], nhan):
+    y = h - mau["bang_y"]
+    for x, n in zip([50, 160, 420, 500], mau["cot"]):
         c.drawString(x, y, n)
     c.line(50, y - 4, 545, y - 4)
     for dong in d["dong"]:
         y -= 18
-        ten = TEN_JP.get(dong["ma_sp"], dong["ten"]) if nhat else dong["ten"]
+        ten = TEN_CONG_TY_ME.get(dong["ma_sp"], dong["ten"]) if d["khach"]["ma"] == "HMK" else dong["ten"]
         c.drawString(50, y, dong["ma_sp"])
         c.drawString(160, y, ten[:38])
         c.drawRightString(470, y, f"{dong['so_luong']:,}")
-        c.drawString(500, y, ("個" if dong["dvt"] == "cái" else "セット") if nhat else ("pcs" if dong["dvt"] == "cái" else "set") if anh else dong["dvt"])
+        c.drawString(500, y, mau["don_vi"].get(dong["dvt"], dong["dvt"]))
     c.line(50, y - 6, 545, y - 6)
-    c.drawString(50, y - 30, "備考: 検査成績書を同梱のこと。" if nhat else ("Remarks: Please attach CoC with each lot." if anh else "Ghi chú: giao kèm phiếu kiểm tra chất lượng."))
+    c.drawString(50, y - 30, mau["ghi_chu"])
     c.showPage()
     c.save()
 
@@ -276,12 +311,12 @@ def json_don(d: dict, nguon: str) -> dict:
     }
 
 
-def don_hang(rng: random.Random):
-    thu_muc = GOC / "don-hang-moi"
+def don_hang(rng: random.Random, du_lieu: Path):
+    thu_muc = du_lieu / "don-hang-moi"
     (thu_muc / "fax").mkdir(parents=True, exist_ok=True)
     (thu_muc / "email").mkdir(parents=True, exist_ok=True)
     # JSON mẫu của Module 3 (đọc đơn bằng Claude API), để làm Module 4 mà chưa cần API key.
-    ket_qua = GOC.parent / "module-3" / "hoan-chinh" / "ket-qua"
+    ket_qua = du_lieu.parent / "module-3" / "hoan-chinh" / "ket-qua"
     ket_qua.mkdir(parents=True, exist_ok=True)
     for d in don_moi(rng):
         if d["khach"]["fax"]:
@@ -290,16 +325,16 @@ def don_hang(rng: random.Random):
         else:
             nguon = f"email/{d['so']}.pdf"
             pdf_email(d, thu_muc / nguon)
-        with open(ket_qua / f"{d['so']}.json", "w", encoding="utf-8") as tep:
+        with open(ket_qua / f"{d['so']}.json", "w", encoding="utf-8", newline="") as tep:
             json.dump(json_don(d, nguon), tep, ensure_ascii=False, indent=2)
             tep.write("\n")
 
 
 # ---------------------------------------------------------------------------------------------- kế hoạch sản xuất
-def ke_hoach(rng: random.Random, thang10: list[dict]):
+def ke_hoach(rng: random.Random, thang10: list[dict], du_lieu: Path):
     """File Excel kế hoạch sản xuất tháng 10 của phòng sản xuất: ô gộp, ngày viết ba kiểu, dòng tổng giữa bảng,
     một cột bị ẩn, ghi chú chen vào ô số."""
-    thu_muc = GOC / "ke-hoach-san-xuat"
+    thu_muc = du_lieu / "ke-hoach-san-xuat"
     thu_muc.mkdir(parents=True, exist_ok=True)
     wb = Workbook()
     ws = wb.active
@@ -340,12 +375,23 @@ def ke_hoach(rng: random.Random, thang10: list[dict]):
 
 
 # ---------------------------------------------------------------------------------------------- QC
-def qc(rng: random.Random):
-    """Sổ lỗi QC hằng ngày tháng 10, tổ trưởng ca gõ tay: loại lỗi viết không thống nhất, ghi chú viết tắt."""
-    thu_muc = GOC / "qc"
+# Sổ lỗi ban đầu rút loại lỗi từ một danh sách chung, nên máy ép có cả lỗi dây và chuyền bó dây có cả lỗi ép. Hai bảng
+# dưới đổi loại lỗi sai công đoạn sang một lỗi của đúng công đoạn. Vẫn rút đúng một lần `rng.choice(LOI)` mỗi dòng như
+# bản đầu, nên số dòng, số kiểm, số lỗi từng dòng và mọi dữ liệu dựng sau sổ lỗi (đơn tuần 46, JSON) không đổi.
+LOI = ["ba via", "Ba via", "bavia", "thiếu nhựa", "cong vênh", "sai màu", "đứt dây", "bấm cos lệch", "trầy xước"]
+DOI_LOI_MAY_EP = {"đứt dây": "thiếu nhựa", "bấm cos lệch": "cong vênh"}
+DOI_LOI_BO_DAY = {"ba via": "bấm cos lệch", "bavia": "bấm cos lệch", "Ba via": "đứt dây", "thiếu nhựa": "đứt dây",
+                  "cong vênh": "sai màu dây", "sai màu": "sai màu dây"}
+
+
+def qc(rng: random.Random, du_lieu: Path):
+    """Sổ lỗi QC hằng ngày tháng 10, tổ trưởng ca gõ tay: loại lỗi viết không thống nhất, ghi chú viết tắt. Máy ép chỉ
+    có lỗi ép (ba via viết ba kiểu, thiếu nhựa, cong vênh, sai màu, trầy xước), chuyền bó dây chỉ có lỗi dây (bấm cos
+    lệch, đứt dây, sai màu dây, trầy xước)."""
+    thu_muc = du_lieu / "qc"
     thu_muc.mkdir(parents=True, exist_ok=True)
-    loi = ["ba via", "Ba via", "bavia", "thiếu nhựa", "cong vênh", "sai màu", "đứt dây", "bấm cos lệch", "trầy xước"]
-    ghi_chu = ["", "", "", "đã báo bảo trì", "khuôn mòn, chờ thay", "NVL ẩm, sấy lại 4h", "ca 2 thiếu người", "KH TPW khiếu nại lô 10/10"]
+    ghi_chu = ["", "", "", "đã báo bảo trì", "khuôn mòn, chờ thay", "NVL ẩm, sấy lại 4h", "ca 2 thiếu người",
+               "KH TPW khiếu nại lô 10/10"]
     with open(thu_muc / "loi_hang_ngay_2026-10.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["ngay", "ca", "may_chuyen", "ma_hang", "sl_kiem", "sl_loi", "loai_loi", "ghi_chu", "nguoi_ghi"])
@@ -355,21 +401,32 @@ def qc(rng: random.Random):
                     ma = rng.choice(HANG)[0]
                     kiem = rng.choice([500, 800, 1000, 1200, 2000]) if not ma.startswith("HM-WH") else rng.choice([60, 80, 120])
                     sl_loi = max(0, int(rng.gauss(kiem * 0.012, kiem * 0.006)))
-                    tram = f"BD-{rng.randint(1, 3)}" if ma.startswith("HM-WH") else f"M{rng.randint(1, 24):02d}"
-                    w.writerow([f"{ngay:02d}/10/2026", ca, tram, ma, kiem, sl_loi, rng.choice(loi) if sl_loi else "", rng.choice(ghi_chu), rng.choice(["Tú", "Hưng", "Nga", "tu.pv"])])
+                    bo_day = ma.startswith("HM-WH")
+                    tram = f"BD-{rng.randint(1, 3)}" if bo_day else f"M{rng.randint(1, 24):02d}"
+                    loai = ""
+                    if sl_loi:
+                        loai = rng.choice(LOI)
+                        loai = (DOI_LOI_BO_DAY if bo_day else DOI_LOI_MAY_EP).get(loai, loai)
+                    ghi = rng.choice(ghi_chu)  # rút ghi chú trước người ghi, đúng thứ tự của bản đầu
+                    nguoi_ghi = rng.choice(["Tú", "Hưng", "Nga", "tu.pv"])
+                    w.writerow([f"{ngay:02d}/10/2026", ca, tram, ma, kiem, sl_loi, loai, ghi, nguoi_ghi])
 
 
-def main():
+def dung(repo: Path = REPO) -> None:
+    """Dựng mọi file dữ liệu vào `repo` (thư mục gốc của repo mẫu, hay thư mục tạm khi test)."""
+    du_lieu = repo / "du-lieu"
     rng = random.Random(SEED)
     pdfmetrics.registerFont(TTFont("VN", FONT_VN))
     pdfmetrics.registerFont(TTFont("VN-Dam", FONT_VN_DAM))
-    # Chữ Nhật dùng font CID có sẵn của reportlab (trình đọc PDF tự có font), không cần nhúng.
-    pdfmetrics.registerFont(UnicodeCIDFont("HeiseiKakuGo-W5"))
-    thang10 = he_thong_cu(rng)
-    ke_hoach(rng, thang10)
-    qc(rng)
-    don_hang(rng)
-    print(f"Đã dựng dữ liệu giả trong {GOC}")
+    thang10 = he_thong_cu(rng, du_lieu)
+    ke_hoach(rng, thang10, du_lieu)
+    qc(rng, du_lieu)
+    don_hang(rng, du_lieu)
+
+
+def main():
+    dung()
+    print(f"Đã dựng dữ liệu giả trong {REPO / 'du-lieu'}")
 
 
 if __name__ == "__main__":

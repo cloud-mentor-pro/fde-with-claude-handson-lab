@@ -1,6 +1,6 @@
 # Module 6: Agent Skills
 
-Skill soạn báo cáo tháng gửi công ty mẹ theo đúng mẫu tiếng Nhật (du-lieu/cong-ty-me/02_月次報告書_様式.md).
+Skill soạn báo cáo tháng gửi công ty mẹ theo đúng mẫu của công ty mẹ (du-lieu/cong-ty-me/02_monthly-report-template.md).
 
 - `bat-dau/`: chỗ học viên bắt đầu làm theo bài.
 - `hoan-chinh/`: lời giải chạy được để so với bài của mình.

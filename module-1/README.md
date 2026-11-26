@@ -1,8 +1,11 @@
 # Module 1: AI làm được gì, không làm được gì
 
-Không có code. Danh sách việc của nhà máy để học viên phân loại: việc AI làm tốt, làm được nếu có người kiểm, và không nên giao.
+Hai script nhỏ để thử Claude trên sổ lỗi QC tháng 10 của Hoshimori Việt Nam, chỉ dùng thư viện có sẵn của Python:
 
-- `bat-dau/`: chỗ học viên bắt đầu làm theo bài.
-- `hoan-chinh/`: lời giải chạy được để so với bài của mình.
+- `bo_ten.py`: chép sổ lỗi sang file mới không có cột tên người (`nguoi_ghi`), để đưa cho Claude mà không gửi thông tin
+  cá nhân.
+- `dem_loi.py`: đếm lỗi bằng code (tỉ lệ lỗi chung, lỗi theo loại sau khi gộp các cách viết, theo công đoạn, năm máy lỗi
+  cao nhất), để đối chiếu với con số Claude đưa ra.
 
-Nội dung soạn cùng bài học của module này trên Anthropic Exam Pro; tới lúc đó hai thư mục chỉ có file README.
+- `bat-dau/`: hai script, chạy trong thư mục này.
+- `hoan-chinh/`: file sổ lỗi đã bỏ tên người, đúng như `bo_ten.py` ghi ra, để so với file của bạn.
