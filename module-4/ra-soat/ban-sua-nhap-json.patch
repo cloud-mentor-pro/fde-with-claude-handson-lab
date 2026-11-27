@@ -1,17 +1,17 @@
-diff --git a/cau_hinh.ini b/cau_hinh.ini
+diff --git a/module-4/ra-soat/cau_hinh.ini b/module-4/ra-soat/cau_hinh.ini
 index 7ed99df..015f940 100644
---- a/cau_hinh.ini
-+++ b/cau_hinh.ini
+--- a/module-4/ra-soat/cau_hinh.ini
++++ b/module-4/ra-soat/cau_hinh.ini
 @@ -3,4 +3,4 @@
  duong_dan = ../../du-lieu/he-thong-cu/donhang.db
  
  [chung]
 -nguoi_nhap = thao.nt
 +nguoi_nhap = admin
-diff --git a/nhap_don.py b/nhap_don.py
+diff --git a/module-4/ra-soat/nhap_don.py b/module-4/ra-soat/nhap_don.py
 index 4d6bcde..1852ce1 100644
---- a/nhap_don.py
-+++ b/nhap_don.py
+--- a/module-4/ra-soat/nhap_don.py
++++ b/module-4/ra-soat/nhap_don.py
 @@ -3,11 +3,12 @@
  # Viet: Long - P.IT - 03/2016
  # Sua 12/2016 (Long): them kiem tra ma khach
@@ -96,10 +96,10 @@ index 4d6bcde..1852ce1 100644
      con.close()
      return 0
  
-diff --git a/tests/test_nhap_don.py b/tests/test_nhap_don.py
+diff --git a/module-4/ra-soat/tests/test_nhap_don.py b/module-4/ra-soat/tests/test_nhap_don.py
 index 7cc7440..26f3e72 100644
---- a/tests/test_nhap_don.py
-+++ b/tests/test_nhap_don.py
+--- a/module-4/ra-soat/tests/test_nhap_don.py
++++ b/module-4/ra-soat/tests/test_nhap_don.py
 @@ -13,6 +13,7 @@ import unittest
  THU_MUC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
  CONG_CU = os.path.join(THU_MUC, "nhap_don.py")
