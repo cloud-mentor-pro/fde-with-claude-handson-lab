@@ -6,3 +6,5 @@ du-lieu/ke-hoach-san-xuat/** -text
 du-lieu/qc/** -text
 module-1/hoan-chinh/*.csv -text
 module-3/hoan-chinh/ket-qua/** -text
+# Bản sửa chờ soát của Module 4: git giữ nguyên LF trên mọi máy, để git apply khớp từng dòng.
+module-4/ra-soat/** -text

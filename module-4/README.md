@@ -4,4 +4,4 @@ Dùng Claude Code trên code cũ của khách: đọc hiểu công cụ nhập �
 
 - `bat-dau/`: chỗ học viên bắt đầu làm theo bài.
 - `hoan-chinh/`: lời giải chạy được để so với bài của mình.
-
+- `ra-soat/`: một bản sửa thêm `--json` đang chờ soát (`ban-sua-nhap-json.patch`), cho bài đọc diff và nhờ review.

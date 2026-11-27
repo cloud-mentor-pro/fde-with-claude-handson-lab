@@ -1,0 +1,127 @@
+diff --git a/cau_hinh.ini b/cau_hinh.ini
+index 7ed99df..015f940 100644
+--- a/cau_hinh.ini
++++ b/cau_hinh.ini
+@@ -3,4 +3,4 @@
+ duong_dan = ../../du-lieu/he-thong-cu/donhang.db
+ 
+ [chung]
+-nguoi_nhap = thao.nt
++nguoi_nhap = admin
+diff --git a/nhap_don.py b/nhap_don.py
+index 4d6bcde..1852ce1 100644
+--- a/nhap_don.py
++++ b/nhap_don.py
+@@ -3,11 +3,12 @@
+ # Viet: Long - P.IT - 03/2016
+ # Sua 12/2016 (Long): them kiem tra ma khach
+ # Sua 07/2020 (Quan): chay duoc tren Python 3
+-# Sua 11/2026 (FDE): so luong co dau cham/phay ngan nghin (4.000) bi doc thanh 4
++# Sua 11/2026 (FDE): so luong co dau cham/phay ngan nghin (4.000) bi doc thanh 4; them --json (don Module 3 doc ra)
+ #
+ # Cach dung:  python nhap_don.py <phieu_nhap.csv> [--db <duong dan db>]
++#             python nhap_don.py --json <thu muc JSON> [--db <duong dan db>]
+ # Phieu nhap: file Excel cua P.Kinh doanh, luu ra CSV (dau ; , ma Windows)
+-import sys, os, csv, re, sqlite3, configparser
++import sys, os, csv, glob, json, re, sqlite3, configparser
+ from datetime import datetime
+ 
+ THU_MUC = os.path.dirname(os.path.abspath(__file__))
+@@ -73,6 +74,31 @@ def doc_phieu(duong_dan):
+     return [(k, don[k]) for k in thu_tu]
+ 
+ 
++def ngay_iso(s):
++    # ngay trong JSON dang yyyy-mm-dd -> dd/mm/yyyy nhu he thong cu
++    return datetime.strptime(s, "%Y-%m-%d").strftime("%d/%m/%Y") if s else ""
++
++
++def doc_json(thu_muc):
++    # Don Module 3 doc ra: moi file mot don. Don can_nguoi_xem thi giu lai, khong nhap.
++    ds, giu_lai = [], []
++    for duong_dan in sorted(glob.glob(os.path.join(thu_muc, "*.json"))):
++        with open(duong_dan, encoding="utf-8") as f:
++            j = json.load(f)
++        if j.get("can_nguoi_xem") == "true":
++            giu_lai.append("%s: %s" % (j["so_don_khach"], j.get("ly_do", "")))
++            continue
++        d = {
++            "MaKH": j["ma_khach"],
++            "NgayDat": ngay_iso(j["ngay_dat"]),
++            "NgayGiao": ngay_iso(j.get("ngay_giao") or "2026-11-30"),
++            "GhiChu": "",
++            "dong": [(x["ma_hang"], str(x["so_luong"])) for x in j["dong"]],
++        }
++        ds.append((j["so_don_khach"], d))
++    return ds, giu_lai
++
++
+ def nhap_mot_don(so_khach, d):
+     kh = con.execute("SELECT MaKH FROM tblKhachHang WHERE MaKH=?", (d["MaKH"],)).fetchone()
+     if kh is None:
+@@ -109,15 +135,25 @@ def main(args):
+         i = args.index("--db")
+         DB = args[i + 1]
+         args = args[:i] + args[i + 2:]
+-    if len(args) < 1:
++    thu_muc_json = None
++    if "--json" in args:
++        i = args.index("--json")
++        thu_muc_json = args[i + 1]
++        args = args[:i] + args[i + 2:]
++    if len(args) < 1 and thu_muc_json is None:
+         print("Cach dung: python nhap_don.py <phieu_nhap.csv> [--db <duong dan db>]")
++        print("           python nhap_don.py --json <thu muc JSON> [--db <duong dan db>]")
+         return 1
+     if not os.path.exists(DB):
+         print("Khong thay CSDL: " + DB)
+         return 1
+     ket_noi()
+     print("Nhap vao: " + DB)
+-    ds = doc_phieu(args[0])
++    giu_lai = []
++    if thu_muc_json is not None:
++        ds, giu_lai = doc_json(thu_muc_json)
++    else:
++        ds = doc_phieu(args[0])
+     ok = 0
+     for so_khach, d in ds:
+         if nhap_mot_don(so_khach, d):
+@@ -125,6 +161,8 @@ def main(args):
+     print("Da nhap %d/%d don." % (ok, len(ds)))
+     for l in loi:
+         print("LOI: " + l)
++    for g in giu_lai:
++        print("CAN NGUOI XEM, CHUA NHAP: " + g)
+     con.close()
+     return 0
+ 
+diff --git a/tests/test_nhap_don.py b/tests/test_nhap_don.py
+index 7cc7440..26f3e72 100644
+--- a/tests/test_nhap_don.py
++++ b/tests/test_nhap_don.py
+@@ -13,6 +13,7 @@ import unittest
+ THU_MUC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ CONG_CU = os.path.join(THU_MUC, "nhap_don.py")
+ CSDL_GOC = os.path.join(THU_MUC, "..", "..", "du-lieu", "he-thong-cu", "donhang.db")
++JSON_MODULE_3 = os.path.join(THU_MUC, "..", "..", "module-3", "hoan-chinh", "ket-qua")
+ 
+ 
+ class NhapDon(unittest.TestCase):
+@@ -81,5 +82,16 @@ class NhapDon(unittest.TestCase):
+         self.assertEqual(kq.returncode, 1)
+ 
+ 
++    def test_nhap_json_cua_module_3(self):
++        kq = self.chay("--json", JSON_MODULE_3)
++        self.assertEqual(kq.returncode, 0, kq.stdout + kq.stderr)
++        self.assertIn("Da nhap", kq.stdout)
++        self.assertEqual(self.so_luong("LHP-2611-02"), [("HM-CN-2062", 4000), ("HM-WH-7712", 60)])
++        con = sqlite3.connect(self.db)
++        ngay = con.execute("SELECT NgayDat, NgayGiao FROM tblDonHang WHERE GhiChu LIKE '%[phieu ICV-2611-05]%'").fetchone()
++        con.close()
++        self.assertEqual(ngay, ("11/11/2026", "02/12/2026"))
++
++
+ if __name__ == "__main__":
+     unittest.main()
