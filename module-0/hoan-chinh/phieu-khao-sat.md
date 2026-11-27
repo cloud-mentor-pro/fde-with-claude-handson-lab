@@ -1,25 +1,21 @@
 # Phiếu ghi chép buổi khảo sát đầu tiên
 
 Khách: Công ty TNHH Hoshimori Việt Nam (HMV)
-Ngày: thứ hai của tuần đầu
+Ngày: ngày đầu khảo sát
 Người ghi: FDE của công ty bạn
 
 Một cách ghi cho buổi khảo sát ở bài "Gặp khách hàng mẫu". Phiếu của bạn không cần giống từng chữ; so xem bạn có bỏ sót
-người, nguồn dữ liệu hay việc phải xin duyệt nào không.
+người, nguồn dữ liệu, mốc đo hay việc phải xin duyệt nào không.
 
 ## 1. Ai là ai
 
-| Người | Việc ở nhà máy | Vai trong dự án | Điều họ lo |
+| Người | Việc ở nhà máy | Vai trò trong dự án | Điều họ lo |
 |---|---|---|---|
-| Ông Yamada Kenichi | Tổng giám đốc, sang từ công ty mẹ năm 2023 | Người ký cuối ở phía HMV | Có kết quả để báo cáo về Nagoya; lộ dữ liệu |
-| Chị Trần Thu Hà | Phó giám đốc sản xuất | Người mời công ty mình tới; có thể làm champion | Họp dài, mua phần mềm rồi để đó |
-| Anh Nguyễn Minh Quân | Một mình lo IT | Người cấp quyền truy cập hệ thống và dữ liệu | AI làm hỏng dữ liệu; không có thời gian viết lại hệ thống cũ |
-| Chị Lê Ngọc Diệp | Trưởng nhóm kinh doanh, nhận đơn | Người hưởng lợi trực tiếp nếu đọc đơn tự động | Ngày nào cũng gọi khách hỏi lại đơn fax mờ |
-| Em Nguyễn Thị Thảo | Nhập đơn vào hệ thống cũ | Người dùng hằng ngày | Sợ bị AI thay việc |
-| Anh Phạm Văn Tú | Trưởng QC | Người dùng nếu làm phần sổ lỗi | Lỗi nào lặp lại ở máy nào |
-| Chị Võ Hoàng Yến | Thư ký giám đốc, phiên dịch tiếng Nhật | Người kiểm bản nháp báo cáo tháng | Mất khoảng hai ngày mỗi tháng cho báo cáo |
-| Ông Satō Makoto (công ty mẹ) | Trưởng phòng Hệ thống thông tin | Người duyệt mọi dịch vụ AI mới (ringi) | Dữ liệu đi đâu |
-| Chị Suzuki Misaki (công ty mẹ) | Phòng Kinh doanh quốc tế | Người nhận báo cáo tháng | Báo cáo đúng mẫu, đúng hạn |
+| Chị Trần Thu Hà | Phó giám đốc sản xuất; phòng chị soạn báo cáo tháng gửi công ty mẹ | Mời công ty mình tới, bảo trợ pilot | Mua phần mềm rồi để đó |
+| Anh Nguyễn Minh Quân | Một mình lo IT, giữ hệ thống cũ và công cụ nhập đơn | Cấp quyền truy cập hệ thống và dữ liệu | AI làm hỏng dữ liệu; không có thời gian viết lại hệ thống cũ |
+| Chị Lê Ngọc Diệp | Trưởng nhóm kinh doanh, nhận đơn fax và email | Champion nếu làm pilot đọc đơn | Ngày nào cũng gọi khách hỏi lại đơn fax mờ |
+| Em Nguyễn Thị Thảo | Nhập đơn vào hệ thống cũ (tài khoản `thao.nt`) | Người dùng hằng ngày | Sợ bị AI thay việc |
+| Ông Satō Makoto (công ty mẹ ở Nagoya) | Trưởng phòng Hệ thống thông tin | Người duyệt mọi dịch vụ AI mới (ringi) | Dữ liệu đi đâu |
 
 ## 2. Dữ liệu
 
@@ -29,26 +25,34 @@ người, nguồn dữ liệu hay việc phải xin duyệt nào không.
 | File CSV hệ thống cũ xuất ra | `du-lieu/he-thong-cu/xuat_don_hang_2026-10.csv` | Đơn tháng 10 | Dấu chấm phẩy, mã Windows-1258, mở bằng UTF-8 ra chữ lỗi | Không thấy |
 | Đơn hàng mới tuần 46 | `du-lieu/don-hang-moi/` | 6 fax, 4 email PDF | Fax mờ, nghiêng; mỗi khách một mẫu đơn; đơn của công ty mẹ bằng tiếng Anh | Có: tên người đặt hàng trên đơn |
 | Kế hoạch sản xuất tháng 10 | `du-lieu/ke-hoach-san-xuat/` | 1 file Excel | Ô gộp, ngày viết ba kiểu, cột bị ẩn | Chưa xem kỹ |
-| Sổ lỗi QC tháng 10 | `du-lieu/qc/` | 316 dòng | Lỗi "ba via" viết ba kiểu; tỉ lệ lỗi 1,14% so với mục tiêu 1,0% | Có: tên người ghi sổ |
+| Sổ lỗi QC tháng 10 | `du-lieu/qc/` | 316 dòng | Lỗi "ba via" viết ba kiểu; tỉ lệ lỗi 1,14% so với mục tiêu 1,0% | Có: tên người ghi sổ (cột `nguoi_ghi`) |
 | Tài liệu công ty mẹ | `du-lieu/cong-ty-me/` | 4 tài liệu tiếng Anh | Không bẩn, nhưng quyết định được dùng AI tới đâu | Không |
 
 ## 3. Chỗ vướng
 
 | Việc | Ai làm | Mất bao lâu | Sai thì hậu quả gì |
 |---|---|---|---|
-| Gõ đơn fax và PDF vào hệ thống cũ | Em Thảo, chị Diệp | Chưa đo, hỏi chị Diệp số đơn mỗi ngày và thời gian mỗi đơn | Sai số lượng thì giao nhầm hàng |
-| Hỏi "đơn nào sắp trễ?" | Anh Quân chạy truy vấn | Chưa đo | Biết trễ quá muộn |
-| Soạn báo cáo tháng gửi công ty mẹ | Chị Yến | Khoảng hai ngày mỗi tháng | Báo cáo sai số liệu gửi công ty mẹ |
+| Gõ đơn fax và PDF vào hệ thống cũ | Em Thảo, chị Diệp | Xem mốc đo ở mục 4 | Sai số lượng thì giao nhầm hàng |
+| Gọi khách hỏi lại đơn fax mờ | Chị Diệp | Xem mốc đo ở mục 4 | Nhập theo chỗ đoán thì giao nhầm |
+| Soạn báo cáo tháng gửi công ty mẹ | Vài người ở phòng chị Hà | Chưa đo | Báo cáo sai số liệu gửi công ty mẹ |
 | Tổng hợp sổ lỗi QC | Chưa ai làm | Không làm | Không thấy lỗi lặp lại ở máy nào |
 
-## 4. Câu cần hỏi thêm
+## 4. Mốc đo trước khi làm
+
+| Mốc đo | Hiện nay | Đo hay ước | Đo thế nào | Ai cho số, ngày |
+|---|---|---|---|---|
+| Phút nhập một đơn | Email PDF 4 phút, fax 7 phút (trung bình) | Đo | Ngồi cạnh em Thảo một buổi sáng, bấm giờ từ lúc mở đơn tới lúc lưu xong, 12 đơn (5 email, 7 fax) | Em Thảo, ngày đầu khảo sát |
+| Cuộc gọi xác nhận đơn fax mỗi tuần | Khoảng 10 cuộc | Ước | Chị Diệp nhớ lại, chưa có sổ ghi. Đã nhờ chị ghi mỗi cuộc gọi (ngày, khách, số đơn, hỏi gì) trong hai tuần trước pilot | Chị Diệp, ngày đầu khảo sát |
+| Đơn giao nhầm mỗi tháng | 3 đơn trong tháng 10/2026 | Đo | Đếm phiếu khách báo giao nhầm mà phòng kinh doanh lưu; chưa tách nhầm do nhập đơn với nhầm do kho | Chị Diệp, ngày đầu khảo sát |
+
+## 5. Câu cần hỏi thêm
 
 - Ba khách còn gửi fax (`TPW`, `LHP`, `HLX`) có gửi được PDF qua email không?
-- Mỗi ngày có bao nhiêu đơn, nhập mỗi đơn mất bao lâu? (cần số này để đo trước và sau pilot)
+- Ba đơn giao nhầm tháng 10: đơn nào nhầm do nhập, đơn nào do kho? (hỏi chị Diệp)
 - `TPW` và `TPW2` có phải cùng một khách không? Ai sửa được?
 - Ai ở nhà máy được xem dữ liệu nào?
 
-## 5. Việc phải xin duyệt trước khi làm
+## 6. Việc phải xin duyệt trước khi làm
 
 - Dùng Claude cho dữ liệu thật của nhà máy: công ty mẹ chưa duyệt dịch vụ AI nào, phải qua ringi gửi ông Satō
   (mục 2 của hướng dẫn dùng AI tạo sinh, bản 1.2).

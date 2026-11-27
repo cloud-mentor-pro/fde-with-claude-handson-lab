@@ -8,9 +8,9 @@ Ghi bằng lời của bạn. Ô nào chưa biết thì ghi "chưa biết, hỏi
 
 ## 1. Ai là ai
 
-Vai trong dự án: người quyết định, người cấp quyền truy cập, người dùng hằng ngày, người duyệt, người hưởng lợi.
+Vai trò trong dự án: người bảo trợ, người cấp quyền truy cập, champion, người dùng hằng ngày, người duyệt.
 
-| Người | Việc ở nhà máy | Vai trong dự án | Điều họ lo |
+| Người | Việc ở nhà máy | Vai trò trong dự án | Điều họ lo |
 |---|---|---|---|
 | | | | |
 
@@ -26,10 +26,20 @@ Vai trong dự án: người quyết định, người cấp quyền truy cập,
 |---|---|---|---|
 | | | | |
 
-## 4. Câu cần hỏi thêm
+## 4. Mốc đo trước khi làm
+
+Ghi trước khi đổi bất cứ thứ gì trong cách làm hiện nay. Số tự đo và số người khác ước ghi riêng.
+
+| Mốc đo | Hiện nay | Đo hay ước | Đo thế nào | Ai cho số, ngày |
+|---|---|---|---|---|
+| Phút nhập một đơn | | | | |
+| Cuộc gọi xác nhận đơn fax mỗi tuần | | | | |
+| Đơn giao nhầm mỗi tháng | | | | |
+
+## 5. Câu cần hỏi thêm
 
 -
 
-## 5. Việc phải xin duyệt trước khi làm
+## 6. Việc phải xin duyệt trước khi làm
 
 -
