@@ -1,0 +1,3 @@
+# Thư viện cho Module 3, cài trong venv của repo: pip install -r module-3/requirements.txt
+anthropic==2.14.0
+python-dotenv==1.2.4
